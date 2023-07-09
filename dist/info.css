@@ -1,0 +1,137 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+body {
+  background: url(../img/downWave.svg) no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  height: 100vh;
+}
+body .navbar nav {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 0.2fr 1fr;
+}
+body .navbar nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 2rem;
+}
+body .navbar nav div .here {
+  text-decoration: underline;
+  color: #a0a0a0;
+}
+body .navbar nav div a {
+  text-decoration: none;
+  color: #000;
+}
+body .navbar nav h1 {
+  font-size: 6rem;
+}
+body .info-page {
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(3, 1fr);
+}
+body .info-page .first-info,
+body .info-page .experience {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+body .info-page .first-info div,
+body .info-page .experience div {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  place-self: center;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+body .info-page .first-info div input,
+body .info-page .experience div input {
+  margin: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.2rem;
+}
+body .info-page .first-info div input::-moz-placeholder, body .info-page .experience div input::-moz-placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page .first-info div input::placeholder,
+body .info-page .experience div input::placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page .last-layer {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+body .info-page .last-layer img {
+  border-radius: 30%;
+}
+body .info-page .last-layer .expe-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+}
+body .info-page .last-layer .expe-details textarea {
+  background-color: #f0efef;
+}
+body .info-page .last-layer .expe-details button {
+  width: 30%;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+body .info-page .last-layer .addExp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+body .info-page .last-layer .addExp p {
+  font-size: 2rem;
+}
+body .info-page .last-layer .addExp p a {
+  cursor: pointer;
+  color: #000000;
+}
+body .info-page .last-layer .addExp button {
+  width: 30%;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}/*# sourceMappingURL=info.css.map */

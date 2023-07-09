@@ -1,0 +1,87 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+}
+.main .navbar nav {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 0.2fr 1fr;
+}
+.main .navbar nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 2rem;
+}
+.main .navbar nav div a {
+  text-decoration: none;
+  color: #000;
+}
+.main .navbar nav h1 {
+  font-size: 6rem;
+}
+.main .first-page {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  background-image: url(../img/blob.svg);
+  background-repeat: no-repeat;
+  background-size: 125rem;
+  background-attachment: fixed;
+  background-position: -50rem -10rem;
+}
+.main .first-page .onlineCv {
+  border-radius: 10rem;
+  max-width: 50rem;
+}
+.main .first-page .description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  margin: 0.5rem;
+}
+.main .first-page .description h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+.main .first-page .description ul {
+  font-size: 2rem;
+}
+.main .first-page .description ul p {
+  padding: 1rem;
+}
+.main .first-page .description ul li {
+  padding: 1rem;
+  list-style: none;
+}
+.main .first-page .description button {
+  outline: none;
+  border: none;
+  background-color: #8a3ffc;
+  color: #ffffff;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 10rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.main .first-page .description button:hover {
+  background-color: #7316fd;
+}/*# sourceMappingURL=style.css.map */

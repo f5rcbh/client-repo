@@ -1,0 +1,86 @@
+@forward "global";
+@use "./responsive/breakpoint" as break;
+@use "./fonts/colors" as color;
+@use "./fonts/text" as text;
+@use "./responsive/layouts" as layout;
+
+//import for other pages
+
+// for main page design
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+  .navbar {
+    nav {
+      width: 100%;
+      @include layout.gridCenter();
+      grid-template-columns: 0.2fr 1fr;
+      div {
+        @include layout.flexCenter();
+        justify-content: space-evenly;
+        width: 100%;
+        font-size: text.$midSize;
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+      h1 {
+        font-size: text.$XLargeSize;
+      }
+    }
+  }
+  .first-page {
+    @include layout.gridCenter();
+    grid-template-columns: 1fr 1fr;
+    background-image: url(../img/blob.svg);
+    background-repeat: no-repeat;
+    background-size: 125rem;
+    background-attachment: fixed;
+    background-position: -50rem -10rem;
+    .onlineCv {
+      border-radius: 10rem;
+      max-width: 50rem;
+    }
+
+    .description {
+      @include layout.flexCenter();
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      margin: 0.5rem;
+      h1 {
+        text-align: center;
+        font-size: text.$largeSize;
+      }
+      ul {
+        font-size: text.$midSize;
+        p {
+          padding: 1rem;
+        }
+        li {
+          padding: 1rem;
+          list-style: none;
+        }
+      }
+      button {
+        outline: none;
+        border: none;
+        background-color: color.$blobPurp;
+        color: color.$white;
+        width: 20rem;
+        height: 5rem;
+        border-radius: 10rem;
+        font-size: text.$midSize;
+        cursor: pointer;
+        &:hover {
+          background-color: color.$darkBlob;
+        }
+      }
+    }
+  }
+}
+
+// for info page

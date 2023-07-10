@@ -5,19 +5,25 @@
 @use "./responsive/layouts" as layout;
 
 body {
+  height: 100%;
   background: url(../img/downWave.svg) no-repeat;
-  background-position: bottom;
   background-size: cover;
-  height: 100vh;
-  .navbar {
+  background-position: bottom;
+  // info layer
+  .info-page {
     nav {
-      @include layout.gridCenter();
-      grid-template-columns: 0.2fr 1fr;
+      @include layout.flexCenter();
+      margin: 0 2rem;
+      h1 {
+        font-size: text.$XLargeSize;
+        margin-left: auto;
+      }
       div {
         @include layout.flexCenter();
         justify-content: space-evenly;
-        width: 100%;
         font-size: text.$midSize;
+        margin: auto;
+        width: 100%;
         .here {
           text-decoration: underline;
           color: color.$active;
@@ -27,27 +33,21 @@ body {
           color: #000;
         }
       }
-      h1 {
-        font-size: text.$XLargeSize;
-      }
     }
-  }
 
-  // info layer
-  .info-page {
-    @include layout.gridCenter();
-    grid-template-rows: repeat(3, 1fr);
     // input styles
     .first-info,
     .experience {
       @include layout.flexCenter();
       flex-direction: column;
       justify-content: space-around;
-      align-items: flex-start;
+      margin: 2rem;
+      h1 {
+        margin-left: auto;
+      }
       div {
-        @include layout.gridCenter();
-        grid-template-columns: repeat(4, 1fr);
-        place-self: center;
+        flex-wrap: wrap;
+        @include layout.flexCenter();
         column-gap: 5rem;
         input {
           margin: 1rem;
@@ -64,43 +64,37 @@ body {
       }
     }
     // experience layer the last one
-    .last-layer {
-      @include layout.gridCenter();
-      grid-template-columns: repeat(3, 1fr);
+    .mid-layer {
+      @include layout.flexCenter();
       column-gap: 2rem;
+      justify-content: space-around;
+      flex-wrap: wrap;
       img {
         border-radius: 30%;
       }
       .expe-details {
         @include layout.flexCenter();
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-evenly;
-        height: 100%;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        h1 {
+          margin-left: auto;
+        }
         textarea {
           background-color: color.$lightGray;
         }
-        button {
-          width: 30%;
-          height: 3rem;
-          font-size: text.$midSize;
-          border-radius: 20px;
-          border: none;
-          background-color: color.$white;
-          cursor: pointer;
-        }
       }
+
       // this is for adding experience
       .addExp {
         @include layout.flexCenter();
         flex-direction: column;
-        width: 100%;
-        height: 40%;
-        align-items: flex-start;
         justify-content: space-around;
 
         p {
-          font-size: text.$midSize;
+          margin: 1rem;
+          font-size: text.$smallSize;
+
           a {
             cursor: pointer;
             color: color.$black;
@@ -108,8 +102,8 @@ body {
         }
 
         button {
-          width: 30%;
-          height: 3rem;
+          width: 8rem;
+          height: 2.5rem;
           font-size: text.$midSize;
           border-radius: 20px;
           border: none;
@@ -117,6 +111,116 @@ body {
           cursor: pointer;
         }
       }
+    }
+    .last-layer {
+      margin: 1rem;
+      @include layout.gridCenter();
+      flex-wrap: wrap;
+      .certificate-info {
+        @include layout.flexCenter();
+        flex-direction: column;
+        align-items: stretch;
+        input {
+          margin: 1rem;
+          width: 20rem;
+          height: 3rem;
+          border-radius: 10px;
+          outline: none;
+          font-size: 1.2rem;
+          &::placeholder {
+            margin: 1rem;
+            padding: 1rem;
+          }
+        }
+        .addCer {
+          @include layout.flexCenter();
+          flex-direction: column;
+          p {
+            margin: 1rem;
+            font-size: text.$smallSize;
+
+            a {
+              cursor: pointer;
+              color: color.$black;
+            }
+          }
+
+          button {
+            width: 8rem;
+            height: 2.5rem;
+            font-size: text.$midSize;
+            border-radius: 20px;
+            border: none;
+            background-color: color.$white;
+            cursor: pointer;
+          }
+        }
+        div {
+          @include layout.flexCenter();
+          flex-wrap: wrap;
+        }
+      }
+      .skills-info {
+        @include layout.flexCenter();
+        justify-content: space-evenly;
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 1rem;
+
+        img {
+          border-radius: 5rem;
+          margin: 1rem;
+        }
+        .addSkill {
+          @include layout.flexCenter();
+          flex-direction: column;
+          justify-content: space-around;
+
+          p {
+            margin: 1rem;
+            font-size: text.$smallSize;
+
+            a {
+              cursor: pointer;
+              color: color.$black;
+            }
+          }
+
+          button {
+            width: 8rem;
+            height: 2.5rem;
+            font-size: text.$midSize;
+            border-radius: 20px;
+            border: none;
+            background-color: color.$white;
+            cursor: pointer;
+          }
+        }
+        input {
+          margin: 1rem;
+          width: 20rem;
+          height: 3rem;
+          border-radius: 10px;
+          outline: none;
+          font-size: 1.2rem;
+          &::placeholder {
+            margin: 1rem;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .finishBtn {
+    button {
+      cursor: pointer;
+      border: none;
+      color: color.$white;
+      font-size: text.$midSize;
+      background-color: color.$blobPurp;
+      width: 20rem;
+      height: 4rem;
+      border-radius: 5rem;
     }
   }
 }

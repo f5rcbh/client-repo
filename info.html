@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./dist/info.css" />
   </head>
   <body>
-    <div class="navbar">
+    <div class="info-page">
       <nav>
         <h1>سيرة</h1>
         <div>
@@ -16,47 +16,75 @@
           <a href="#">تواصل معنا </a>
         </div>
       </nav>
-    </div>
-    <div class="info-page">
-      <div class="first-info">
-        <h1>المعلومات الشخصية</h1>
-        <div>
-          <input type="text" name="" id="" placeholder="الاسم الثنائي" />
-          <input type="text" name="" id="" placeholder="مسماك الوظيفي " />
-          <input type="text" name="" id="" placeholder="البريد الإلكتروني" />
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="موقعك الشخصي او حسابك في لينكدان"
+      <form action="#">
+        <div class="first-info">
+          <h1>المعلومات الشخصية</h1>
+          <div>
+            <input type="text" name="" id="" placeholder="الاسم الثنائي" />
+            <input type="text" name="" id="" placeholder="مسماك الوظيفي " />
+            <input type="email" name="" id="" placeholder="البريد الإلكتروني" />
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="موقعك الشخصي او حسابك في لينكدان"
+            />
+          </div>
+        </div>
+        <div class="experience">
+          <h1>الخبرات</h1>
+          <div>
+            <input type="text" name="" id="" placeholder="جهة العمل" />
+            <input type="text" name="" id="" placeholder="المسمى الوظيفي " />
+            <input type="date" name="" id="" placeholder="تاريخ البداية " />
+            <input type="date" name="" id="" placeholder="تاريخ النهاية" />
+          </div>
+        </div>
+        <div class="mid-layer">
+          <img
+            width="400px"
+            src="./img/undraw_personal_information_re_vw8a.png"
+            alt=""
           />
+          <div class="expe-details">
+            <h1>تفاصيل الخبرة</h1>
+            <textarea name="" id="" cols="90" rows="10"></textarea>
+            <div class="addExp">
+              <p><a href=""> إضافة خبرة اخرى؟ </a></p>
+              <button>إضافة</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="experience">
-        <h1>الخبرات</h1>
-        <div>
-          <input type="text" name="" id="" placeholder="جهة العمل" />
-          <input type="text" name="" id="" placeholder="المسمى الوظيفي " />
-          <input type="date" name="" id="" placeholder="تاريخ البداية " />
-          <input type="date" name="" id="" placeholder="تاريخ النهاية" />
+        <div class="last-layer">
+          <div class="certificate-info">
+            <h1>الشهادات</h1>
+            <div>
+              <input type="text" name="" id="" placeholder="اسم الجهة " />
+              <input type="text" name="" id="" placeholder="الشهادة" />
+              <input type="date" name="" id="" placeholder="تاريخ الإصدار" />
+              <div class="addCer">
+                <p><a href=""> إضافة شهادة اخرى؟ </a></p>
+                <button>إضافة</button>
+              </div>
+            </div>
+          </div>
+          <div class="skills-info">
+            <div>
+              <h1>المهارات</h1>
+
+              <input type="text" name="" id="" placeholder="المهارة" />
+              <div class="addSkill">
+                <p><a href=""> إضافة مهارة اخرى؟ </a></p>
+                <button>إضافة</button>
+              </div>
+            </div>
+            <img width="400px" src="./img/undraw_Done_re_oak4.png" alt="" />
+          </div>
+          <div class="finishBtn">
+            <button type="submit">أنشئ سيرتي الذاتية</button>
+          </div>
         </div>
-      </div>
-      <div class="last-layer">
-        <img
-          width="490px"
-          src="./img/undraw_personal_information_re_vw8a.png"
-          alt=""
-        />
-        <div class="expe-details">
-          <h1>تفاصيل الخبرة</h1>
-          <textarea name="" id="" cols="100" rows="10"></textarea>
-          <button>التالي</button>
-        </div>
-        <div class="addExp">
-          <p><a href=""> إضافة خبرة اخرى؟ </a></p>
-          <button>إضافة</button>
-        </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

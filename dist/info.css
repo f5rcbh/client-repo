@@ -8,39 +8,37 @@
 }
 
 body {
+  height: 100%;
   background: url(../img/downWave.svg) no-repeat;
-  background-position: bottom;
   background-size: cover;
-  height: 100vh;
+  background-position: bottom;
 }
-body .navbar nav {
-  display: grid;
-  place-items: center;
-  grid-template-columns: 0.2fr 1fr;
+body .info-page nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
 }
-body .navbar nav div {
+body .info-page nav h1 {
+  font-size: 6rem;
+  margin-left: auto;
+}
+body .info-page nav div {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
   font-size: 2rem;
+  margin: auto;
+  width: 100%;
 }
-body .navbar nav div .here {
+body .info-page nav div .here {
   text-decoration: underline;
   color: #a0a0a0;
 }
-body .navbar nav div a {
+body .info-page nav div a {
   text-decoration: none;
   color: #000;
-}
-body .navbar nav h1 {
-  font-size: 6rem;
-}
-body .info-page {
-  display: grid;
-  place-items: center;
-  grid-template-rows: repeat(3, 1fr);
 }
 body .info-page .first-info,
 body .info-page .experience {
@@ -49,14 +47,18 @@ body .info-page .experience {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  margin: 2rem;
+}
+body .info-page .first-info h1,
+body .info-page .experience h1 {
+  margin-left: auto;
 }
 body .info-page .first-info div,
 body .info-page .experience div {
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  place-self: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   -moz-column-gap: 5rem;
        column-gap: 5rem;
 }
@@ -78,60 +80,174 @@ body .info-page .experience div input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .info-page .last-layer {
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(3, 1fr);
+body .info-page .mid-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-body .info-page .last-layer img {
+body .info-page .mid-layer img {
   border-radius: 30%;
 }
-body .info-page .last-layer .expe-details {
+body .info-page .mid-layer .expe-details {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  height: 100%;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
-body .info-page .last-layer .expe-details textarea {
+body .info-page .mid-layer .expe-details h1 {
+  margin-left: auto;
+}
+body .info-page .mid-layer .expe-details textarea {
   background-color: #f0efef;
 }
-body .info-page .last-layer .expe-details button {
-  width: 30%;
-  height: 3rem;
-  font-size: 2rem;
-  border-radius: 20px;
-  border: none;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-body .info-page .last-layer .addExp {
+body .info-page .mid-layer .addExp {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 40%;
-  align-items: flex-start;
   justify-content: space-around;
 }
-body .info-page .last-layer .addExp p {
-  font-size: 2rem;
+body .info-page .mid-layer .addExp p {
+  margin: 1rem;
+  font-size: 1rem;
 }
-body .info-page .last-layer .addExp p a {
+body .info-page .mid-layer .addExp p a {
   cursor: pointer;
   color: #000000;
 }
-body .info-page .last-layer .addExp button {
-  width: 30%;
-  height: 3rem;
+body .info-page .mid-layer .addExp button {
+  width: 8rem;
+  height: 2.5rem;
   font-size: 2rem;
   border-radius: 20px;
   border: none;
   background-color: #ffffff;
   cursor: pointer;
+}
+body .info-page .last-layer {
+  margin: 1rem;
+  display: grid;
+  place-items: center;
+  flex-wrap: wrap;
+}
+body .info-page .last-layer .certificate-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+}
+body .info-page .last-layer .certificate-info input {
+  margin: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.2rem;
+}
+body .info-page .last-layer .certificate-info input::-moz-placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page .last-layer .certificate-info input::placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page .last-layer .certificate-info .addCer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .info-page .last-layer .certificate-info .addCer p {
+  margin: 1rem;
+  font-size: 1rem;
+}
+body .info-page .last-layer .certificate-info .addCer p a {
+  cursor: pointer;
+  color: #000000;
+}
+body .info-page .last-layer .certificate-info .addCer button {
+  width: 8rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+body .info-page .last-layer .certificate-info div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .info-page .last-layer .skills-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+body .info-page .last-layer .skills-info img {
+  border-radius: 5rem;
+  margin: 1rem;
+}
+body .info-page .last-layer .skills-info .addSkill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body .info-page .last-layer .skills-info .addSkill p {
+  margin: 1rem;
+  font-size: 1rem;
+}
+body .info-page .last-layer .skills-info .addSkill p a {
+  cursor: pointer;
+  color: #000000;
+}
+body .info-page .last-layer .skills-info .addSkill button {
+  width: 8rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+body .info-page .last-layer .skills-info input {
+  margin: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.2rem;
+}
+body .info-page .last-layer .skills-info input::-moz-placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page .last-layer .skills-info input::placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .finishBtn button {
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  background-color: #8a3ffc;
+  width: 20rem;
+  height: 4rem;
+  border-radius: 5rem;
 }/*# sourceMappingURL=info.css.map */

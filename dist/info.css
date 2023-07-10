@@ -11,7 +11,7 @@ body {
   height: 100%;
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center left;
 }
 body .info-page nav {
   display: flex;
@@ -22,6 +22,10 @@ body .info-page nav {
 body .info-page nav h1 {
   font-size: 6rem;
   margin-left: auto;
+}
+body .info-page nav h1 a {
+  text-decoration: none;
+  color: inherit;
 }
 body .info-page nav div {
   display: flex;
@@ -40,8 +44,17 @@ body .info-page nav div a {
   text-decoration: none;
   color: #000;
 }
-body .info-page .first-info,
-body .info-page .experience {
+body .info-page form {
+  position: relative;
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+body .info-page form .first-info,
+body .info-page form .experience,
+body .info-page form .mid-layer,
+body .info-page form .last-layer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,12 +62,16 @@ body .info-page .experience {
   justify-content: space-around;
   margin: 2rem;
 }
-body .info-page .first-info h1,
-body .info-page .experience h1 {
+body .info-page form .first-info h1,
+body .info-page form .experience h1,
+body .info-page form .mid-layer h1,
+body .info-page form .last-layer h1 {
   margin-left: auto;
 }
-body .info-page .first-info div,
-body .info-page .experience div {
+body .info-page form .first-info div,
+body .info-page form .experience div,
+body .info-page form .mid-layer div,
+body .info-page form .last-layer div {
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
@@ -62,37 +79,44 @@ body .info-page .experience div {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
 }
-body .info-page .first-info div input,
-body .info-page .experience div input {
+body .info-page form .first-info div input,
+body .info-page form .experience div input,
+body .info-page form .mid-layer div input,
+body .info-page form .last-layer div input {
   margin: 1rem;
-  width: 20rem;
+  width: 15rem;
   height: 3rem;
   border-radius: 10px;
   outline: none;
   font-size: 1.2rem;
 }
-body .info-page .first-info div input::-moz-placeholder, body .info-page .experience div input::-moz-placeholder {
+body .info-page form .first-info div input::-moz-placeholder, body .info-page form .experience div input::-moz-placeholder, body .info-page form .mid-layer div input::-moz-placeholder, body .info-page form .last-layer div input::-moz-placeholder {
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
-body .info-page .first-info div input::placeholder,
-body .info-page .experience div input::placeholder {
+body .info-page form .first-info div input::placeholder,
+body .info-page form .experience div input::placeholder,
+body .info-page form .mid-layer div input::placeholder,
+body .info-page form .last-layer div input::placeholder {
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
-body .info-page .mid-layer {
+body .info-page form .mid-layer {
   display: flex;
   justify-content: center;
   align-items: center;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   justify-content: space-around;
+  flex-direction: row;
   flex-wrap: wrap;
 }
-body .info-page .mid-layer img {
+body .info-page form .mid-layer img {
   border-radius: 30%;
 }
-body .info-page .mid-layer .expe-details {
+body .info-page form .mid-layer .expe-details {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,28 +124,28 @@ body .info-page .mid-layer .expe-details {
   align-items: flex-end;
   flex-wrap: wrap;
 }
-body .info-page .mid-layer .expe-details h1 {
+body .info-page form .mid-layer .expe-details h1 {
   margin-left: auto;
 }
-body .info-page .mid-layer .expe-details textarea {
+body .info-page form .mid-layer .expe-details textarea {
   background-color: #f0efef;
 }
-body .info-page .mid-layer .addExp {
+body .info-page form .mid-layer .addExp {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
 }
-body .info-page .mid-layer .addExp p {
+body .info-page form .mid-layer .addExp p {
   margin: 1rem;
   font-size: 1rem;
 }
-body .info-page .mid-layer .addExp p a {
+body .info-page form .mid-layer .addExp p a {
   cursor: pointer;
   color: #000000;
 }
-body .info-page .mid-layer .addExp button {
+body .info-page form .mid-layer .addExp button {
   width: 8rem;
   height: 2.5rem;
   font-size: 2rem;
@@ -130,93 +154,74 @@ body .info-page .mid-layer .addExp button {
   background-color: #ffffff;
   cursor: pointer;
 }
-body .info-page .last-layer {
-  margin: 1rem;
-  display: grid;
-  place-items: center;
-  flex-wrap: wrap;
-}
-body .info-page .last-layer .certificate-info {
+body .info-page form .certificate-info,
+body .info-page form .lang-info,
+body .info-page form .skills-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  align-items: stretch;
-}
-body .info-page .last-layer .certificate-info input {
-  margin: 1rem;
-  width: 20rem;
-  height: 3rem;
-  border-radius: 10px;
-  outline: none;
-  font-size: 1.2rem;
-}
-body .info-page .last-layer .certificate-info input::-moz-placeholder {
-  margin: 1rem;
-  padding: 1rem;
-}
-body .info-page .last-layer .certificate-info input::placeholder {
-  margin: 1rem;
-  padding: 1rem;
-}
-body .info-page .last-layer .certificate-info .addCer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-body .info-page .last-layer .certificate-info .addCer p {
-  margin: 1rem;
-  font-size: 1rem;
-}
-body .info-page .last-layer .certificate-info .addCer p a {
-  cursor: pointer;
-  color: #000000;
-}
-body .info-page .last-layer .certificate-info .addCer button {
-  width: 8rem;
-  height: 2.5rem;
-  font-size: 2rem;
-  border-radius: 20px;
-  border: none;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-body .info-page .last-layer .certificate-info div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
-body .info-page .last-layer .skills-info {
+body .info-page form .certificate-info h1,
+body .info-page form .lang-info h1,
+body .info-page form .skills-info h1 {
+  margin-left: auto;
+}
+body .info-page form .certificate-info div,
+body .info-page form .lang-info div,
+body .info-page form .skills-info div {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
   flex-wrap: wrap;
-  margin: 1rem;
 }
-body .info-page .last-layer .skills-info img {
-  border-radius: 5rem;
+body .info-page form .certificate-info input,
+body .info-page form .lang-info input,
+body .info-page form .skills-info input {
   margin: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.2rem;
 }
-body .info-page .last-layer .skills-info .addSkill {
+body .info-page form .certificate-info input::-moz-placeholder, body .info-page form .lang-info input::-moz-placeholder, body .info-page form .skills-info input::-moz-placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page form .certificate-info input::placeholder,
+body .info-page form .lang-info input::placeholder,
+body .info-page form .skills-info input::placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page form .certificate-info .addCer,
+body .info-page form .lang-info .addCer,
+body .info-page form .skills-info .addCer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
 }
-body .info-page .last-layer .skills-info .addSkill p {
+body .info-page form .certificate-info .addCer p,
+body .info-page form .lang-info .addCer p,
+body .info-page form .skills-info .addCer p {
   margin: 1rem;
   font-size: 1rem;
 }
-body .info-page .last-layer .skills-info .addSkill p a {
+body .info-page form .certificate-info .addCer p a,
+body .info-page form .lang-info .addCer p a,
+body .info-page form .skills-info .addCer p a {
   cursor: pointer;
   color: #000000;
 }
-body .info-page .last-layer .skills-info .addSkill button {
+body .info-page form .certificate-info .addCer button,
+body .info-page form .lang-info .addCer button,
+body .info-page form .skills-info .addCer button {
   width: 8rem;
   height: 2.5rem;
   font-size: 2rem;
@@ -225,7 +230,14 @@ body .info-page .last-layer .skills-info .addSkill button {
   background-color: #ffffff;
   cursor: pointer;
 }
-body .info-page .last-layer .skills-info input {
+body .info-page form .lang-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+body .info-page form .lang-info input {
   margin: 1rem;
   width: 20rem;
   height: 3rem;
@@ -233,21 +245,95 @@ body .info-page .last-layer .skills-info input {
   outline: none;
   font-size: 1.2rem;
 }
-body .info-page .last-layer .skills-info input::-moz-placeholder {
+body .info-page form .lang-info input::-moz-placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .info-page .last-layer .skills-info input::placeholder {
+body .info-page form .lang-info input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .finishBtn button {
+body .info-page form .lang-info .addLang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .info-page form .lang-info .addLang p {
+  margin: 1rem;
+  font-size: 1rem;
+}
+body .info-page form .lang-info .addLang p a {
+  cursor: pointer;
+  color: #000000;
+}
+body .info-page form .lang-info .addLang button {
+  width: 8rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+body .info-page form .skills-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+body .info-page form .skills-info .addSkill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .info-page form .skills-info .addSkill p {
+  margin: 1rem;
+  font-size: 1rem;
+}
+body .info-page form .skills-info .addSkill p a {
+  cursor: pointer;
+  color: #000000;
+}
+body .info-page form .skills-info .addSkill button {
+  width: 8rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+body .info-page form img {
+  border-radius: 5rem;
+  margin: 1rem;
+}
+body .info-page form input {
+  margin: 1rem;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.2rem;
+}
+body .info-page form input::-moz-placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page form input::placeholder {
+  margin: 1rem;
+  padding: 1rem;
+}
+body .info-page .finishBtn {
   cursor: pointer;
   border: none;
   color: #ffffff;
   font-size: 2rem;
   background-color: #8a3ffc;
-  width: 20rem;
-  height: 4rem;
+  width: 25rem;
+  height: 5rem;
   border-radius: 5rem;
+  margin: 2rem auto;
 }/*# sourceMappingURL=info.css.map */

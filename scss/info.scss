@@ -5,18 +5,26 @@
 @use "./responsive/layouts" as layout;
 
 body {
+  margin: auto;
   min-height: 100vh;
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
-  background-position: center left;
+  background-position: left;
+  @include break.breakpoint(small) {
+    background-position: center;
+  }
   // info layer
   .info-page {
+    margin: auto;
     nav {
       @include layout.flexCenter();
       margin: 0 2rem;
       h1 {
         font-size: text.$XLargeSize;
         margin-left: auto;
+        @include break.breakpoint(small) {
+          font-size: text.$midSize;
+        }
         a {
           text-decoration: none;
           color: inherit;
@@ -26,8 +34,12 @@ body {
         @include layout.flexCenter();
         justify-content: space-evenly;
         font-size: text.$midSize;
+
         margin: auto;
         width: 100%;
+        @include break.breakpoint(small) {
+          font-size: text.$smallSize;
+        }
         .here {
           text-decoration: underline;
           color: color.$active;
@@ -39,22 +51,24 @@ body {
       }
     }
     form {
-      position: relative;
       max-width: 80%;
       margin: auto;
-      display: flex;
+      @include layout.flexCenter();
       flex-direction: column;
+
       // input styles
       .first-info,
       .experience,
-      .mid-layer,
-      .last-layer {
+      .mid-layer {
         @include layout.flexCenter();
         flex-direction: column;
         justify-content: space-around;
-        margin: 2rem;
+        margin: 1rem;
         h1 {
           margin-left: auto;
+          @include break.breakpoint(small) {
+            font-size: text.$halfSmall;
+          }
         }
         div {
           flex-wrap: wrap;
@@ -84,17 +98,27 @@ body {
         flex-wrap: wrap;
         img {
           border-radius: 30%;
+          @include break.breakpoint(small) {
+            width: 300px;
+          }
         }
         .expe-details {
           @include layout.flexCenter();
           flex-direction: column;
           align-items: flex-end;
           flex-wrap: wrap;
+          @include break.breakpoint(small) {
+            align-items: center;
+          }
           h1 {
             margin-left: auto;
           }
           textarea {
             background-color: color.$lightGray;
+            @include break.breakpoint(small) {
+              width: 20rem;
+              height: 10rem;
+            }
           }
         }
 
@@ -122,6 +146,10 @@ body {
             border: none;
             background-color: color.$white;
             cursor: pointer;
+            @include break.breakpoint(small) {
+              width: 6rem;
+              font-size: text.$halfSmall;
+            }
           }
         }
       }
@@ -134,6 +162,9 @@ body {
         flex-wrap: wrap;
         h1 {
           margin-left: auto;
+          @include break.breakpoint(small) {
+            font-size: text.$halfSmall;
+          }
         }
         div {
           @include layout.flexCenter();
@@ -151,6 +182,9 @@ body {
           &::placeholder {
             margin: 1rem;
             padding: 1rem;
+          }
+          @include break.breakpoint(small) {
+            width: 15rem;
           }
         }
         .addCer {
@@ -174,6 +208,10 @@ body {
             border: none;
             background-color: color.$white;
             cursor: pointer;
+            @include break.breakpoint(small) {
+              width: 6rem;
+              font-size: text.$halfSmall;
+            }
           }
         }
       }
@@ -192,6 +230,9 @@ body {
           &::placeholder {
             margin: 1rem;
             padding: 1rem;
+          }
+          @include break.breakpoint(small) {
+            width: 15rem;
           }
         }
         .addLang {
@@ -215,6 +256,10 @@ body {
             border: none;
             background-color: color.$white;
             cursor: pointer;
+            @include break.breakpoint(small) {
+              width: 6rem;
+              font-size: text.$halfSmall;
+            }
           }
         }
       }
@@ -243,6 +288,10 @@ body {
             border: none;
             background-color: color.$white;
             cursor: pointer;
+            @include break.breakpoint(small) {
+              width: 6rem;
+              font-size: text.$halfSmall;
+            }
           }
         }
       }
@@ -276,6 +325,10 @@ body {
       height: 5rem;
       border-radius: 5rem;
       margin: 2rem auto;
+      @include break.breakpoint(small) {
+        width: 15rem;
+        font-size: text.$halfSmall;
+      }
     }
   }
 }

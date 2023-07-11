@@ -7,11 +7,25 @@
 //import for other pages
 
 // for main page design
-.main {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 0.1fr 1fr;
-  .navbar {
+body {
+  height: 100vh;
+  background-image: url(../img/blob.svg);
+  background-repeat: no-repeat;
+  background-size: 125rem;
+  background-attachment: fixed;
+  background-position: -50rem -10rem;
+  @include break.breakpoint(mid) {
+    background-size: 100rem;
+  }
+  @include break.breakpoint(small) {
+    background-size: 70rem;
+    background-position: -30rem 30rem;
+  }
+  .main {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+
     nav {
       width: 100%;
       @include layout.gridCenter();
@@ -21,6 +35,12 @@
         justify-content: space-evenly;
         width: 100%;
         font-size: text.$midSize;
+        @include break.breakpoint(mid) {
+          font-size: text.$halfSmall;
+        }
+        @include break.breakpoint(small) {
+          font-size: text.$smallSize;
+        }
         a {
           text-decoration: none;
           color: #000;
@@ -28,59 +48,96 @@
       }
       h1 {
         font-size: text.$XLargeSize;
+        @include break.breakpoint(mid) {
+          font-size: text.$largeSize;
+        }
+        @include break.breakpoint(small) {
+          font-size: text.$midSize;
+        }
       }
-    }
-  }
-  .first-page {
-    @include layout.gridCenter();
-    grid-template-columns: 1fr 1fr;
-    background-image: url(../img/blob.svg);
-    background-repeat: no-repeat;
-    background-size: 125rem;
-    background-attachment: fixed;
-    background-position: -50rem -10rem;
-    .onlineCv {
-      border-radius: 10rem;
-      max-width: 50rem;
     }
 
-    .description {
-      @include layout.flexCenter();
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      height: 100%;
-      margin: 0.5rem;
-      h1 {
-        text-align: center;
-        font-size: text.$largeSize;
+    .first-page {
+      @include layout.gridCenter();
+      grid-template-columns: 1fr 1fr;
+
+      @include break.breakpoint(small) {
+        @include layout.flexCenter();
+        flex-direction: column;
       }
-      ul {
-        font-size: text.$midSize;
-        p {
-          padding: 1rem;
+      .onlineCv {
+        border-radius: 8rem;
+        width: 50rem;
+        @include break.breakpoint(mid) {
+          width: 30rem;
         }
-        li {
-          padding: 1rem;
-          list-style: none;
+        @include break.breakpoint(small) {
+          width: 20rem;
+          margin: 1rem;
         }
       }
-      button {
-        outline: none;
-        border: none;
-        background-color: color.$blobPurp;
-        color: color.$white;
-        width: 20rem;
-        height: 5rem;
-        border-radius: 10rem;
-        font-size: text.$midSize;
-        cursor: pointer;
-        &:hover {
-          background-color: color.$darkBlob;
+
+      .description {
+        @include layout.flexCenter();
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        margin: 0.5rem;
+        @include break.breakpoint(small) {
+          margin: 2rem;
+        }
+        h1 {
+          text-align: center;
+          font-size: text.$largeSize;
+          @include break.breakpoint(mid) {
+            font-size: text.$midSize;
+          }
+          @include break.breakpoint(small) {
+            font-size: text.$halfSmall;
+          }
+        }
+        ul {
+          font-size: text.$midSize;
+          @include break.breakpoint(mid) {
+            font-size: text.$halfSmall;
+          }
+          @include break.breakpoint(small) {
+            font-size: text.$smallSize;
+          }
+          p {
+            padding: 1rem;
+          }
+          li {
+            padding: 1rem;
+            list-style: none;
+          }
+        }
+        button {
+          outline: none;
+          border: none;
+          background-color: color.$blobPurp;
+          color: color.$white;
+          width: 20rem;
+          height: 5rem;
+          border-radius: 10rem;
+          font-size: text.$midSize;
+          cursor: pointer;
+          @include break.breakpoint(mid) {
+            width: 15rem;
+            font-size: text.$halfSmall;
+          }
+          @include break.breakpoint(small) {
+            width: 10rem;
+            height: 3rem;
+            font-size: text.$smallSize;
+          }
+
+          &:hover {
+            background-color: color.$darkBlob;
+          }
         }
       }
     }
   }
 }
-
-// for info page

@@ -8,10 +8,19 @@
 }
 
 body {
+  margin: auto;
   min-height: 100vh;
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
-  background-position: center left;
+  background-position: left;
+}
+@media (max-width: 750px) {
+  body {
+    background-position: center;
+  }
+}
+body .info-page {
+  margin: auto;
 }
 body .info-page nav {
   display: flex;
@@ -22,6 +31,11 @@ body .info-page nav {
 body .info-page nav h1 {
   font-size: 6rem;
   margin-left: auto;
+}
+@media (max-width: 750px) {
+  body .info-page nav h1 {
+    font-size: 2rem;
+  }
 }
 body .info-page nav h1 a {
   text-decoration: none;
@@ -36,6 +50,11 @@ body .info-page nav div {
   margin: auto;
   width: 100%;
 }
+@media (max-width: 750px) {
+  body .info-page nav div {
+    font-size: 1rem;
+  }
+}
 body .info-page nav div .here {
   text-decoration: underline;
   color: #a0a0a0;
@@ -45,33 +64,38 @@ body .info-page nav div a {
   color: #000;
 }
 body .info-page form {
-  position: relative;
   max-width: 80%;
   margin: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 body .info-page form .first-info,
 body .info-page form .experience,
-body .info-page form .mid-layer,
-body .info-page form .last-layer {
+body .info-page form .mid-layer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  margin: 2rem;
+  margin: 1rem;
 }
 body .info-page form .first-info h1,
 body .info-page form .experience h1,
-body .info-page form .mid-layer h1,
-body .info-page form .last-layer h1 {
+body .info-page form .mid-layer h1 {
   margin-left: auto;
+}
+@media (max-width: 750px) {
+  body .info-page form .first-info h1,
+  body .info-page form .experience h1,
+  body .info-page form .mid-layer h1 {
+    font-size: 1.5rem;
+  }
 }
 body .info-page form .first-info div,
 body .info-page form .experience div,
-body .info-page form .mid-layer div,
-body .info-page form .last-layer div {
+body .info-page form .mid-layer div {
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
@@ -81,8 +105,7 @@ body .info-page form .last-layer div {
 }
 body .info-page form .first-info div input,
 body .info-page form .experience div input,
-body .info-page form .mid-layer div input,
-body .info-page form .last-layer div input {
+body .info-page form .mid-layer div input {
   margin: 1rem;
   width: 15rem;
   height: 3rem;
@@ -90,15 +113,14 @@ body .info-page form .last-layer div input {
   outline: none;
   font-size: 1.2rem;
 }
-body .info-page form .first-info div input::-moz-placeholder, body .info-page form .experience div input::-moz-placeholder, body .info-page form .mid-layer div input::-moz-placeholder, body .info-page form .last-layer div input::-moz-placeholder {
+body .info-page form .first-info div input::-moz-placeholder, body .info-page form .experience div input::-moz-placeholder, body .info-page form .mid-layer div input::-moz-placeholder {
   margin: 1rem;
   padding: 0.5rem;
   font-size: 1rem;
 }
 body .info-page form .first-info div input::placeholder,
 body .info-page form .experience div input::placeholder,
-body .info-page form .mid-layer div input::placeholder,
-body .info-page form .last-layer div input::placeholder {
+body .info-page form .mid-layer div input::placeholder {
   margin: 1rem;
   padding: 0.5rem;
   font-size: 1rem;
@@ -116,6 +138,11 @@ body .info-page form .mid-layer {
 body .info-page form .mid-layer img {
   border-radius: 30%;
 }
+@media (max-width: 750px) {
+  body .info-page form .mid-layer img {
+    width: 300px;
+  }
+}
 body .info-page form .mid-layer .expe-details {
   display: flex;
   justify-content: center;
@@ -124,11 +151,22 @@ body .info-page form .mid-layer .expe-details {
   align-items: flex-end;
   flex-wrap: wrap;
 }
+@media (max-width: 750px) {
+  body .info-page form .mid-layer .expe-details {
+    align-items: center;
+  }
+}
 body .info-page form .mid-layer .expe-details h1 {
   margin-left: auto;
 }
 body .info-page form .mid-layer .expe-details textarea {
   background-color: #f0efef;
+}
+@media (max-width: 750px) {
+  body .info-page form .mid-layer .expe-details textarea {
+    width: 20rem;
+    height: 10rem;
+  }
 }
 body .info-page form .mid-layer .addExp {
   display: flex;
@@ -154,6 +192,12 @@ body .info-page form .mid-layer .addExp button {
   background-color: #ffffff;
   cursor: pointer;
 }
+@media (max-width: 750px) {
+  body .info-page form .mid-layer .addExp button {
+    width: 6rem;
+    font-size: 1.5rem;
+  }
+}
 body .info-page form .certificate-info,
 body .info-page form .lang-info,
 body .info-page form .skills-info {
@@ -167,6 +211,13 @@ body .info-page form .certificate-info h1,
 body .info-page form .lang-info h1,
 body .info-page form .skills-info h1 {
   margin-left: auto;
+}
+@media (max-width: 750px) {
+  body .info-page form .certificate-info h1,
+  body .info-page form .lang-info h1,
+  body .info-page form .skills-info h1 {
+    font-size: 1.5rem;
+  }
 }
 body .info-page form .certificate-info div,
 body .info-page form .lang-info div,
@@ -199,6 +250,13 @@ body .info-page form .skills-info input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
+@media (max-width: 750px) {
+  body .info-page form .certificate-info input,
+  body .info-page form .lang-info input,
+  body .info-page form .skills-info input {
+    width: 15rem;
+  }
+}
 body .info-page form .certificate-info .addCer,
 body .info-page form .lang-info .addCer,
 body .info-page form .skills-info .addCer {
@@ -230,6 +288,14 @@ body .info-page form .skills-info .addCer button {
   background-color: #ffffff;
   cursor: pointer;
 }
+@media (max-width: 750px) {
+  body .info-page form .certificate-info .addCer button,
+  body .info-page form .lang-info .addCer button,
+  body .info-page form .skills-info .addCer button {
+    width: 6rem;
+    font-size: 1.5rem;
+  }
+}
 body .info-page form .lang-info {
   display: flex;
   justify-content: center;
@@ -253,6 +319,11 @@ body .info-page form .lang-info input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
+@media (max-width: 750px) {
+  body .info-page form .lang-info input {
+    width: 15rem;
+  }
+}
 body .info-page form .lang-info .addLang {
   display: flex;
   justify-content: center;
@@ -275,6 +346,12 @@ body .info-page form .lang-info .addLang button {
   border: none;
   background-color: #ffffff;
   cursor: pointer;
+}
+@media (max-width: 750px) {
+  body .info-page form .lang-info .addLang button {
+    width: 6rem;
+    font-size: 1.5rem;
+  }
 }
 body .info-page form .skills-info {
   display: flex;
@@ -306,6 +383,12 @@ body .info-page form .skills-info .addSkill button {
   background-color: #ffffff;
   cursor: pointer;
 }
+@media (max-width: 750px) {
+  body .info-page form .skills-info .addSkill button {
+    width: 6rem;
+    font-size: 1.5rem;
+  }
+}
 body .info-page form img {
   border-radius: 5rem;
   margin: 1rem;
@@ -336,4 +419,10 @@ body .info-page .finishBtn {
   height: 5rem;
   border-radius: 5rem;
   margin: 2rem auto;
+}
+@media (max-width: 750px) {
+  body .info-page .finishBtn {
+    width: 15rem;
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=info.css.map */

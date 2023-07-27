@@ -1,7 +1,7 @@
+// 900px 700px
 $breakpointAll: (
-  "small": 750px,
-  "mid": 900px,
-  "large": 1400px,
+  "small": 925px,
+  "medium": 1100px,
 );
 
 @mixin breakpoint($size) {

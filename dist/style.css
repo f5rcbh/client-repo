@@ -15,12 +15,12 @@ body {
   background-attachment: fixed;
   background-position: -50rem -10rem;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body {
     background-size: 100rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body {
     background-size: 70rem;
     background-position: -30rem 30rem;
@@ -45,12 +45,12 @@ body .main nav div {
   width: 100%;
   font-size: 2rem;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body .main nav div {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main nav div {
     font-size: 1rem;
   }
@@ -62,12 +62,12 @@ body .main nav div a {
 body .main nav h1 {
   font-size: 6rem;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body .main nav h1 {
     font-size: 3rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main nav h1 {
     font-size: 2rem;
   }
@@ -77,7 +77,7 @@ body .main .first-page {
   place-items: center;
   grid-template-columns: 1fr 1fr;
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main .first-page {
     display: flex;
     justify-content: center;
@@ -89,12 +89,12 @@ body .main .first-page .onlineCv {
   border-radius: 8rem;
   width: 50rem;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body .main .first-page .onlineCv {
     width: 30rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main .first-page .onlineCv {
     width: 20rem;
     margin: 1rem;
@@ -110,7 +110,7 @@ body .main .first-page .description {
   height: 100%;
   margin: 0.5rem;
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main .first-page .description {
     margin: 2rem;
   }
@@ -119,12 +119,12 @@ body .main .first-page .description h1 {
   text-align: center;
   font-size: 3rem;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body .main .first-page .description h1 {
     font-size: 2rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main .first-page .description h1 {
     font-size: 1.5rem;
   }
@@ -132,12 +132,12 @@ body .main .first-page .description h1 {
 body .main .first-page .description ul {
   font-size: 2rem;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body .main .first-page .description ul {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main .first-page .description ul {
     font-size: 1rem;
   }
@@ -160,13 +160,13 @@ body .main .first-page .description button {
   font-size: 2rem;
   cursor: pointer;
 }
-@media (max-width: 900px) {
+@media (max-width: ) {
   body .main .first-page .description button {
     width: 15rem;
     font-size: 1.5rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .main .first-page .description button {
     width: 10rem;
     height: 3rem;

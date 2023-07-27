@@ -12,9 +12,10 @@ body {
   min-height: 100vh;
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
-  background-position: left;
+  background-position: top;
+  background-color: #ffffff;
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body {
     background-position: center;
   }
@@ -26,13 +27,13 @@ body .info-page nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 2rem;
+  margin: 0rem 2rem;
 }
 body .info-page nav h1 {
   font-size: 6rem;
   margin-left: auto;
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .info-page nav h1 {
     font-size: 2rem;
   }
@@ -50,82 +51,255 @@ body .info-page nav div {
   margin: auto;
   width: 100%;
 }
-@media (max-width: 750px) {
+@media (max-width: 925px) {
   body .info-page nav div {
     font-size: 1rem;
   }
-}
-body .info-page nav div .here {
-  text-decoration: underline;
-  color: #a0a0a0;
 }
 body .info-page nav div a {
   text-decoration: none;
   color: #000;
 }
-body .info-page form {
-  max-width: 80%;
-  margin: auto;
+body .info-page .info-box {
+  overflow: hidden;
+  width: 60%;
+  margin: 2rem auto;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ffffff;
+  box-shadow: 10px -10px 5px #c1c1c1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  height: 80%;
+}
+body .info-page .info-box .profilePic {
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  order: 2;
+}
+body .info-page .info-box .first-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1rem;
+  row-gap: 1rem;
 }
-body .info-page form .first-info,
-body .info-page form .experience,
-body .info-page form .mid-layer {
+body .info-page .info-box .first-info h1 {
+  margin-left: auto;
+  font-size: 3rem;
+}
+@media (max-width: 925px) {
+  body .info-page .info-box .first-info h1 {
+    font-size: 1.5rem;
+  }
+}
+body .info-page .info-box .first-info .input-layout {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 5rem;
+}
+body .info-page .info-box .first-info .input-layout .first-name,
+body .info-page .info-box .first-info .input-layout .last-name,
+body .info-page .info-box .first-info .input-layout .email,
+body .info-page .info-box .first-info .input-layout .phone,
+body .info-page .info-box .first-info .input-layout .linkedIn,
+body .info-page .info-box .first-info .input-layout .job,
+body .info-page .info-box .first-info .input-layout .job-name,
+body .info-page .info-box .first-info .input-layout .start-date,
+body .info-page .info-box .first-info .input-layout .end-date {
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+}
+body .info-page .info-box .first-info .input-layout .first-name input,
+body .info-page .info-box .first-info .input-layout .last-name input,
+body .info-page .info-box .first-info .input-layout .email input,
+body .info-page .info-box .first-info .input-layout .phone input,
+body .info-page .info-box .first-info .input-layout .linkedIn input,
+body .info-page .info-box .first-info .input-layout .job input,
+body .info-page .info-box .first-info .input-layout .job-name input,
+body .info-page .info-box .first-info .input-layout .start-date input,
+body .info-page .info-box .first-info .input-layout .end-date input {
+  font-size: 100%;
+  padding: 1em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 20rem;
+}
+body .info-page .info-box .first-info .input-layout .first-name label,
+body .info-page .info-box .first-info .input-layout .last-name label,
+body .info-page .info-box .first-info .input-layout .email label,
+body .info-page .info-box .first-info .input-layout .phone label,
+body .info-page .info-box .first-info .input-layout .linkedIn label,
+body .info-page .info-box .first-info .input-layout .job label,
+body .info-page .info-box .first-info .input-layout .job-name label,
+body .info-page .info-box .first-info .input-layout .start-date label,
+body .info-page .info-box .first-info .input-layout .end-date label {
+  font-size: 90%;
+  position: absolute;
+  right: 1.5rem;
+  top: 0px;
+  float: right;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+body .info-page .info-box .first-info .input-layout .first-name :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .last-name :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .email :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .phone :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .linkedIn :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .job :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .job-name :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .start-date :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .first-info .input-layout .end-date :is(input:focus, input:valid) ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #ffffff;
+}
+body .info-page .info-box .first-info .input-layout .first-name :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .last-name :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .email :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .phone :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .linkedIn :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .job :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .job-name :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .start-date :is(input:focus, input:valid),
+body .info-page .info-box .first-info .input-layout .end-date :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+body .info-page .info-box .first-info .input-layout .linkedIn {
+  position: relative;
+  grid-column: 1/3;
+}
+body .info-page .info-box .first-info .input-layout .linkedIn input {
+  width: 20rem;
+}
+body .info-page .info-box .first-info .input-layout .linkedIn button {
+  position: absolute;
+  top: 1rem;
+  left: -6rem;
+  width: 5rem;
+  height: 3rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #cacaca;
+  cursor: pointer;
+}
+body .info-page .info-box .first-info .input-layout .end-date {
+  position: relative;
+}
+body .info-page .info-box .first-info .input-layout .end-date button {
+  position: absolute;
+  bottom: -3rem;
+  left: 0.5rem;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #cacaca;
+  cursor: pointer;
+}
+body .info-page .info-box .first-info .input-layout .expe-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  grid-column: 1/3;
+  margin: 1rem;
+}
+@media (max-width: 925px) {
+  body .info-page .info-box .first-info .input-layout .expe-details {
+    align-items: center;
+  }
+}
+body .info-page .info-box .first-info .input-layout .expe-details h1 {
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+body .info-page .info-box .first-info .input-layout .expe-details textarea {
+  background-color: #ffffff;
+  width: 30rem;
+  height: 5rem;
+}
+@media (max-width: 925px) {
+  body .info-page .info-box .first-info .input-layout .expe-details textarea {
+    width: 20rem;
+    height: 10rem;
+  }
+}
+body .info-page .info-box .first-info .input-layout .expe-details .addExp {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  margin: 1rem;
 }
-body .info-page form .first-info h1,
-body .info-page form .experience h1,
-body .info-page form .mid-layer h1 {
-  margin-left: auto;
+body .info-page .info-box .first-info .input-layout .expe-details .addExp p {
+  font-size: 1rem;
+  margin: 0.5rem;
 }
-@media (max-width: 750px) {
-  body .info-page form .first-info h1,
-  body .info-page form .experience h1,
-  body .info-page form .mid-layer h1 {
+body .info-page .info-box .first-info .input-layout .expe-details .addExp p a {
+  cursor: pointer;
+  color: #000000;
+}
+body .info-page .info-box .first-info .input-layout .expe-details .addExp button {
+  width: 5rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #cacaca;
+  cursor: pointer;
+}
+@media (max-width: 925px) {
+  body .info-page .info-box .first-info .input-layout .expe-details .addExp button {
+    width: 6rem;
     font-size: 1.5rem;
   }
 }
-body .info-page form .first-info div,
-body .info-page form .experience div,
-body .info-page form .mid-layer div {
-  flex-wrap: wrap;
+body .info-page .info-box .first-info .next {
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #aceeed;
+  border: 1px solid transparent;
   display: flex;
-  justify-content: center;
   align-items: center;
-  -moz-column-gap: 5rem;
-       column-gap: 5rem;
+  font-size: 1.5rem;
 }
-body .info-page form .first-info div input,
-body .info-page form .experience div input,
-body .info-page form .mid-layer div input {
-  margin: 1rem;
-  width: 15rem;
-  height: 3rem;
-  border-radius: 10px;
-  outline: none;
-  font-size: 1.2rem;
+body .info-page .info-box .first-info .next:hover {
+  background: #94eef8;
 }
-body .info-page form .first-info div input::-moz-placeholder, body .info-page form .experience div input::-moz-placeholder, body .info-page form .mid-layer div input::-moz-placeholder {
-  margin: 1rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+body .info-page .info-box .first-info .next:hover svg {
+  transform: translateX(5px);
 }
-body .info-page form .first-info div input::placeholder,
-body .info-page form .experience div input::placeholder,
-body .info-page form .mid-layer div input::placeholder {
-  margin: 1rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+body .info-page .info-box .first-info .next > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
 }
-body .info-page form .mid-layer {
+body .info-page .info-box .first-info .next:active {
+  transform: scale(0.95);
+}
+body .info-page .info-box .mid-layer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,94 +308,32 @@ body .info-page form .mid-layer {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
+  display: none;
 }
-body .info-page form .mid-layer img {
-  border-radius: 30%;
-}
-@media (max-width: 750px) {
-  body .info-page form .mid-layer img {
-    width: 300px;
-  }
-}
-body .info-page form .mid-layer .expe-details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-@media (max-width: 750px) {
-  body .info-page form .mid-layer .expe-details {
-    align-items: center;
-  }
-}
-body .info-page form .mid-layer .expe-details h1 {
-  margin-left: auto;
-}
-body .info-page form .mid-layer .expe-details textarea {
-  background-color: #f0efef;
-}
-@media (max-width: 750px) {
-  body .info-page form .mid-layer .expe-details textarea {
-    width: 20rem;
-    height: 10rem;
-  }
-}
-body .info-page form .mid-layer .addExp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-}
-body .info-page form .mid-layer .addExp p {
-  margin: 1rem;
-  font-size: 1rem;
-}
-body .info-page form .mid-layer .addExp p a {
-  cursor: pointer;
-  color: #000000;
-}
-body .info-page form .mid-layer .addExp button {
-  width: 8rem;
-  height: 2.5rem;
-  font-size: 2rem;
-  border-radius: 20px;
-  border: none;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-@media (max-width: 750px) {
-  body .info-page form .mid-layer .addExp button {
-    width: 6rem;
-    font-size: 1.5rem;
-  }
-}
-body .info-page form .certificate-info,
-body .info-page form .lang-info,
-body .info-page form .skills-info {
+body .info-page .info-box .mid-layer .certificate-info,
+body .info-page .info-box .mid-layer .lang-info,
+body .info-page .info-box .mid-layer .skills-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
-body .info-page form .certificate-info h1,
-body .info-page form .lang-info h1,
-body .info-page form .skills-info h1 {
+body .info-page .info-box .mid-layer .certificate-info h1,
+body .info-page .info-box .mid-layer .lang-info h1,
+body .info-page .info-box .mid-layer .skills-info h1 {
   margin-left: auto;
 }
-@media (max-width: 750px) {
-  body .info-page form .certificate-info h1,
-  body .info-page form .lang-info h1,
-  body .info-page form .skills-info h1 {
+@media (max-width: 925px) {
+  body .info-page .info-box .mid-layer .certificate-info h1,
+  body .info-page .info-box .mid-layer .lang-info h1,
+  body .info-page .info-box .mid-layer .skills-info h1 {
     font-size: 1.5rem;
   }
 }
-body .info-page form .certificate-info div,
-body .info-page form .lang-info div,
-body .info-page form .skills-info div {
+body .info-page .info-box .mid-layer .certificate-info div,
+body .info-page .info-box .mid-layer .lang-info div,
+body .info-page .info-box .mid-layer .skills-info div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,9 +342,9 @@ body .info-page form .skills-info div {
        column-gap: 5rem;
   flex-wrap: wrap;
 }
-body .info-page form .certificate-info input,
-body .info-page form .lang-info input,
-body .info-page form .skills-info input {
+body .info-page .info-box .mid-layer .certificate-info input,
+body .info-page .info-box .mid-layer .lang-info input,
+body .info-page .info-box .mid-layer .skills-info input {
   margin: 1rem;
   width: 20rem;
   height: 3rem;
@@ -240,46 +352,46 @@ body .info-page form .skills-info input {
   outline: none;
   font-size: 1.2rem;
 }
-body .info-page form .certificate-info input::-moz-placeholder, body .info-page form .lang-info input::-moz-placeholder, body .info-page form .skills-info input::-moz-placeholder {
+body .info-page .info-box .mid-layer .certificate-info input::-moz-placeholder, body .info-page .info-box .mid-layer .lang-info input::-moz-placeholder, body .info-page .info-box .mid-layer .skills-info input::-moz-placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .info-page form .certificate-info input::placeholder,
-body .info-page form .lang-info input::placeholder,
-body .info-page form .skills-info input::placeholder {
+body .info-page .info-box .mid-layer .certificate-info input::placeholder,
+body .info-page .info-box .mid-layer .lang-info input::placeholder,
+body .info-page .info-box .mid-layer .skills-info input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-@media (max-width: 750px) {
-  body .info-page form .certificate-info input,
-  body .info-page form .lang-info input,
-  body .info-page form .skills-info input {
+@media (max-width: 925px) {
+  body .info-page .info-box .mid-layer .certificate-info input,
+  body .info-page .info-box .mid-layer .lang-info input,
+  body .info-page .info-box .mid-layer .skills-info input {
     width: 15rem;
   }
 }
-body .info-page form .certificate-info .addCer,
-body .info-page form .lang-info .addCer,
-body .info-page form .skills-info .addCer {
+body .info-page .info-box .mid-layer .certificate-info .addCer,
+body .info-page .info-box .mid-layer .lang-info .addCer,
+body .info-page .info-box .mid-layer .skills-info .addCer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-body .info-page form .certificate-info .addCer p,
-body .info-page form .lang-info .addCer p,
-body .info-page form .skills-info .addCer p {
+body .info-page .info-box .mid-layer .certificate-info .addCer p,
+body .info-page .info-box .mid-layer .lang-info .addCer p,
+body .info-page .info-box .mid-layer .skills-info .addCer p {
   margin: 1rem;
   font-size: 1rem;
 }
-body .info-page form .certificate-info .addCer p a,
-body .info-page form .lang-info .addCer p a,
-body .info-page form .skills-info .addCer p a {
+body .info-page .info-box .mid-layer .certificate-info .addCer p a,
+body .info-page .info-box .mid-layer .lang-info .addCer p a,
+body .info-page .info-box .mid-layer .skills-info .addCer p a {
   cursor: pointer;
   color: #000000;
 }
-body .info-page form .certificate-info .addCer button,
-body .info-page form .lang-info .addCer button,
-body .info-page form .skills-info .addCer button {
+body .info-page .info-box .mid-layer .certificate-info .addCer button,
+body .info-page .info-box .mid-layer .lang-info .addCer button,
+body .info-page .info-box .mid-layer .skills-info .addCer button {
   width: 8rem;
   height: 2.5rem;
   font-size: 2rem;
@@ -288,22 +400,22 @@ body .info-page form .skills-info .addCer button {
   background-color: #ffffff;
   cursor: pointer;
 }
-@media (max-width: 750px) {
-  body .info-page form .certificate-info .addCer button,
-  body .info-page form .lang-info .addCer button,
-  body .info-page form .skills-info .addCer button {
+@media (max-width: 925px) {
+  body .info-page .info-box .mid-layer .certificate-info .addCer button,
+  body .info-page .info-box .mid-layer .lang-info .addCer button,
+  body .info-page .info-box .mid-layer .skills-info .addCer button {
     width: 6rem;
     font-size: 1.5rem;
   }
 }
-body .info-page form .lang-info {
+body .info-page .info-box .mid-layer .lang-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
-body .info-page form .lang-info input {
+body .info-page .info-box .mid-layer .lang-info input {
   margin: 1rem;
   width: 20rem;
   height: 3rem;
@@ -311,34 +423,34 @@ body .info-page form .lang-info input {
   outline: none;
   font-size: 1.2rem;
 }
-body .info-page form .lang-info input::-moz-placeholder {
+body .info-page .info-box .mid-layer .lang-info input::-moz-placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .info-page form .lang-info input::placeholder {
+body .info-page .info-box .mid-layer .lang-info input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-@media (max-width: 750px) {
-  body .info-page form .lang-info input {
+@media (max-width: 925px) {
+  body .info-page .info-box .mid-layer .lang-info input {
     width: 15rem;
   }
 }
-body .info-page form .lang-info .addLang {
+body .info-page .info-box .mid-layer .lang-info .addLang {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-body .info-page form .lang-info .addLang p {
+body .info-page .info-box .mid-layer .lang-info .addLang p {
   margin: 1rem;
   font-size: 1rem;
 }
-body .info-page form .lang-info .addLang p a {
+body .info-page .info-box .mid-layer .lang-info .addLang p a {
   cursor: pointer;
   color: #000000;
 }
-body .info-page form .lang-info .addLang button {
+body .info-page .info-box .mid-layer .lang-info .addLang button {
   width: 8rem;
   height: 2.5rem;
   font-size: 2rem;
@@ -347,34 +459,34 @@ body .info-page form .lang-info .addLang button {
   background-color: #ffffff;
   cursor: pointer;
 }
-@media (max-width: 750px) {
-  body .info-page form .lang-info .addLang button {
+@media (max-width: 925px) {
+  body .info-page .info-box .mid-layer .lang-info .addLang button {
     width: 6rem;
     font-size: 1.5rem;
   }
 }
-body .info-page form .skills-info {
+body .info-page .info-box .mid-layer .skills-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
-body .info-page form .skills-info .addSkill {
+body .info-page .info-box .mid-layer .skills-info .addSkill {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-body .info-page form .skills-info .addSkill p {
+body .info-page .info-box .mid-layer .skills-info .addSkill p {
   margin: 1rem;
   font-size: 1rem;
 }
-body .info-page form .skills-info .addSkill p a {
+body .info-page .info-box .mid-layer .skills-info .addSkill p a {
   cursor: pointer;
   color: #000000;
 }
-body .info-page form .skills-info .addSkill button {
+body .info-page .info-box .mid-layer .skills-info .addSkill button {
   width: 8rem;
   height: 2.5rem;
   font-size: 2rem;
@@ -383,17 +495,17 @@ body .info-page form .skills-info .addSkill button {
   background-color: #ffffff;
   cursor: pointer;
 }
-@media (max-width: 750px) {
-  body .info-page form .skills-info .addSkill button {
+@media (max-width: 925px) {
+  body .info-page .info-box .mid-layer .skills-info .addSkill button {
     width: 6rem;
     font-size: 1.5rem;
   }
 }
-body .info-page form img {
+body .info-page .info-box .mid-layer img {
   border-radius: 5rem;
   margin: 1rem;
 }
-body .info-page form input {
+body .info-page .info-box .mid-layer input {
   margin: 1rem;
   width: 20rem;
   height: 3rem;
@@ -401,15 +513,24 @@ body .info-page form input {
   outline: none;
   font-size: 1.2rem;
 }
-body .info-page form input::-moz-placeholder {
+body .info-page .info-box .mid-layer input::-moz-placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .info-page form input::placeholder {
+body .info-page .info-box .mid-layer input::placeholder {
   margin: 1rem;
   padding: 1rem;
 }
-body .info-page .finishBtn {
+body .info-page .info-box .infoPic {
+  border-radius: 30%;
+  display: none;
+}
+@media (max-width: 925px) {
+  body .info-page .info-box .infoPic {
+    width: 300px;
+  }
+}
+body .info-page .info-box .finishBtn {
   cursor: pointer;
   border: none;
   color: #ffffff;
@@ -420,8 +541,8 @@ body .info-page .finishBtn {
   border-radius: 5rem;
   margin: 2rem auto;
 }
-@media (max-width: 750px) {
-  body .info-page .finishBtn {
+@media (max-width: 925px) {
+  body .info-page .info-box .finishBtn {
     width: 15rem;
     font-size: 1.5rem;
   }

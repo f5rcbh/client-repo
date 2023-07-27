@@ -1,10 +1,10 @@
 @mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin gridCenter {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 }

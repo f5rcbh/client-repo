@@ -9,16 +9,24 @@ body {
   min-height: 100vh;
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
-  background-position: left;
+  background-position: top;
+  background-color: color.$lightGray;
   @include break.breakpoint(small) {
     background-position: center;
   }
   // info layer
   .info-page {
+    // #active {
+    //   display: flex;
+    //   border: solid;
+    // }
+    // .hide {
+    //   display: none;
+    // }
     margin: auto;
     nav {
       @include layout.flexCenter();
-      margin: 0 2rem;
+      margin: 0rem 2rem;
       h1 {
         font-size: text.$XLargeSize;
         margin-left: auto;
@@ -40,137 +48,368 @@ body {
         @include break.breakpoint(small) {
           font-size: text.$smallSize;
         }
-        .here {
-          text-decoration: underline;
-          color: color.$active;
-        }
+
         a {
           text-decoration: none;
           color: #000;
         }
       }
     }
-    form {
-      max-width: 80%;
-      margin: auto;
-      @include layout.flexCenter();
-      flex-direction: column;
-
-      // input styles
-      .first-info,
-      .experience,
-      .mid-layer {
+    .info-box {
+      overflow: hidden;
+      .profilePic {
+        height: 600px;
+        object-fit: cover;
+        order: 2;
+        // display: none;
+      }
+      width: 60%;
+      margin: 2rem auto;
+      @include layout.gridCenter();
+      grid-template-columns: 1fr 1fr;
+      background-color: color.$white;
+      box-shadow: 10px -10px 5px #c1c1c1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 20px;
+      height: 80%;
+      // info styles
+      .first-info {
         @include layout.flexCenter();
+        // display: none;
         flex-direction: column;
-        justify-content: space-around;
         margin: 1rem;
+        row-gap: 1rem;
         h1 {
           margin-left: auto;
+          font-size: text.$largeSize;
           @include break.breakpoint(small) {
             font-size: text.$halfSmall;
           }
         }
-        div {
-          flex-wrap: wrap;
-          @include layout.flexCenter();
-          column-gap: 5rem;
-          input {
-            margin: 1rem;
-            width: 15rem;
-            height: 3rem;
-            border-radius: 10px;
-            outline: none;
-            font-size: 1.2rem;
-            &::placeholder {
-              margin: 1rem;
-              padding: 0.5rem;
-              font-size: text.$smallSize;
+        .input-layout {
+          @include layout.gridCenter();
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem 5rem;
+          .first-name,
+          .last-name,
+          .email,
+          .phone,
+          .linkedIn,
+          .job,
+          .job-name,
+          .start-date,
+          .end-date {
+            font-family: "Segoe UI", sans-serif;
+            position: relative;
+            input {
+              font-size: 100%;
+              padding: 1em;
+              outline: none;
+              border: 2px solid rgb(200, 200, 200);
+              background-color: transparent;
+              border-radius: 20px;
+              width: 20rem;
             }
+
+            label {
+              font-size: 90%;
+              position: absolute;
+              right: 1.5rem;
+              top: 0px;
+              float: right;
+              padding: 0.8em;
+              margin-left: 0.5em;
+              pointer-events: none;
+              transition: all 0.3s ease;
+              color: rgb(100, 100, 100);
+            }
+
+            :is(input:focus, input:valid) ~ label {
+              transform: translateY(-50%) scale(0.9);
+              margin: 0em;
+              margin-left: 1.3em;
+              padding: 0.4em;
+              background-color: color.$white;
+            }
+            :is(input:focus, input:valid) {
+              border-color: rgb(150, 150, 200);
+            }
+          }
+
+          .linkedIn {
+            position: relative;
+            grid-column: 1/3;
+            input {
+              width: 20rem;
+            }
+            button {
+              position: absolute;
+              top: 1rem;
+              left: -6rem;
+              width: 5rem;
+              height: 3rem;
+              font-size: text.$smallSize;
+              border: none;
+              border-radius: 10px;
+              background-color: color.$active;
+              cursor: pointer;
+            }
+          }
+          .end-date {
+            position: relative;
+            button {
+              position: absolute;
+              bottom: -3rem;
+              left: 0.5rem;
+              width: 5rem;
+              height: 2rem;
+              font-size: text.$smallSize;
+              border: none;
+              border-radius: 10px;
+              background-color: color.$active;
+              cursor: pointer;
+            }
+          }
+          .expe-details {
+            @include layout.flexCenter();
+            flex-direction: column;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            grid-column: 1/3;
+            margin: 1rem;
+            @include break.breakpoint(small) {
+              align-items: center;
+            }
+            h1 {
+              font-size: text.$halfSmall;
+              margin-left: auto;
+            }
+            textarea {
+              background-color: color.$lightGray;
+              width: 30rem;
+              height: 5rem;
+              @include break.breakpoint(small) {
+                width: 20rem;
+                height: 10rem;
+              }
+            }
+            .addExp {
+              @include layout.flexCenter();
+              flex-direction: column;
+              justify-content: space-around;
+
+              p {
+                font-size: text.$smallSize;
+                margin: 0.5rem;
+
+                a {
+                  cursor: pointer;
+                  color: color.$black;
+                }
+              }
+
+              button {
+                width: 5rem;
+                height: 2rem;
+                font-size: text.$halfSmall;
+                border-radius: 20px;
+                border: none;
+                background-color: color.$active;
+                cursor: pointer;
+                @include break.breakpoint(small) {
+                  width: 6rem;
+                  font-size: text.$halfSmall;
+                }
+              }
+            }
+          }
+        }
+        .next {
+          cursor: pointer;
+
+          transition: all 0.2s;
+          padding: 10px 20px;
+          border-radius: 100px;
+          background: #aceeed;
+          border: 1px solid transparent;
+          display: flex;
+          align-items: center;
+          font-size: text.$halfSmall;
+          &:hover {
+            background: #94eef8;
+            svg {
+              transform: translateX(5px);
+            }
+          }
+          & > svg {
+            width: 34px;
+            margin-left: 10px;
+            transition: transform 0.3s ease-in-out;
+          }
+          &:active {
+            transform: scale(0.95);
           }
         }
       }
       // experience layer the last one
+
       .mid-layer {
         @include layout.flexCenter();
         column-gap: 2rem;
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
-        img {
-          border-radius: 30%;
-          @include break.breakpoint(small) {
-            width: 300px;
-          }
-        }
-        .expe-details {
-          @include layout.flexCenter();
-          flex-direction: column;
-          align-items: flex-end;
-          flex-wrap: wrap;
-          @include break.breakpoint(small) {
-            align-items: center;
-          }
-          h1 {
-            margin-left: auto;
-          }
-          textarea {
-            background-color: color.$lightGray;
-            @include break.breakpoint(small) {
-              width: 20rem;
-              height: 10rem;
-            }
-          }
-        }
+        display: none;
 
         // this is for adding experience
-        .addExp {
+
+        .certificate-info,
+        .lang-info,
+        .skills-info {
           @include layout.flexCenter();
           flex-direction: column;
-          justify-content: space-around;
-
-          p {
-            margin: 1rem;
-            font-size: text.$smallSize;
-
-            a {
-              cursor: pointer;
-              color: color.$black;
-            }
-          }
-
-          button {
-            width: 8rem;
-            height: 2.5rem;
-            font-size: text.$midSize;
-            border-radius: 20px;
-            border: none;
-            background-color: color.$white;
-            cursor: pointer;
-            @include break.breakpoint(small) {
-              width: 6rem;
-              font-size: text.$halfSmall;
-            }
-          }
-        }
-      }
-
-      .certificate-info,
-      .lang-info,
-      .skills-info {
-        @include layout.flexCenter();
-        flex-direction: column;
-        flex-wrap: wrap;
-        h1 {
-          margin-left: auto;
-          @include break.breakpoint(small) {
-            font-size: text.$halfSmall;
-          }
-        }
-        div {
-          @include layout.flexCenter();
-          justify-content: space-evenly;
-          column-gap: 5rem;
           flex-wrap: wrap;
+          h1 {
+            margin-left: auto;
+            @include break.breakpoint(small) {
+              font-size: text.$halfSmall;
+            }
+          }
+          div {
+            @include layout.flexCenter();
+            justify-content: space-evenly;
+            column-gap: 5rem;
+            flex-wrap: wrap;
+          }
+          input {
+            margin: 1rem;
+            width: 20rem;
+            height: 3rem;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1.2rem;
+            &::placeholder {
+              margin: 1rem;
+              padding: 1rem;
+            }
+            @include break.breakpoint(small) {
+              width: 15rem;
+            }
+          }
+          .addCer {
+            @include layout.flexCenter();
+            flex-direction: column;
+            p {
+              margin: 1rem;
+              font-size: text.$smallSize;
+
+              a {
+                cursor: pointer;
+                color: color.$black;
+              }
+            }
+
+            button {
+              width: 8rem;
+              height: 2.5rem;
+              font-size: text.$midSize;
+              border-radius: 20px;
+              border: none;
+              background-color: color.$white;
+              cursor: pointer;
+              @include break.breakpoint(small) {
+                width: 6rem;
+                font-size: text.$halfSmall;
+              }
+            }
+          }
+        }
+        .lang-info {
+          @include layout.flexCenter();
+          flex-direction: column;
+          flex-wrap: wrap;
+          input {
+            margin: 1rem;
+            width: 20rem;
+            height: 3rem;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1.2rem;
+            &::placeholder {
+              margin: 1rem;
+              padding: 1rem;
+            }
+            @include break.breakpoint(small) {
+              width: 15rem;
+            }
+          }
+          .addLang {
+            @include layout.flexCenter();
+            flex-direction: column;
+            p {
+              margin: 1rem;
+              font-size: text.$smallSize;
+
+              a {
+                cursor: pointer;
+                color: color.$black;
+              }
+            }
+
+            button {
+              width: 8rem;
+              height: 2.5rem;
+              font-size: text.$midSize;
+              border-radius: 20px;
+              border: none;
+              background-color: color.$white;
+              cursor: pointer;
+              @include break.breakpoint(small) {
+                width: 6rem;
+                font-size: text.$halfSmall;
+              }
+            }
+          }
+        }
+        .skills-info {
+          @include layout.flexCenter();
+          flex-direction: column;
+          flex-wrap: wrap;
+          .addSkill {
+            @include layout.flexCenter();
+            flex-direction: column;
+            p {
+              margin: 1rem;
+              font-size: text.$smallSize;
+
+              a {
+                cursor: pointer;
+                color: color.$black;
+              }
+            }
+
+            button {
+              width: 8rem;
+              height: 2.5rem;
+              font-size: text.$midSize;
+              border-radius: 20px;
+              border: none;
+              background-color: color.$white;
+              cursor: pointer;
+              @include break.breakpoint(small) {
+                width: 6rem;
+                font-size: text.$halfSmall;
+              }
+            }
+          }
+        }
+
+        img {
+          border-radius: 5rem;
+          margin: 1rem;
         }
         input {
           margin: 1rem;
@@ -183,152 +422,34 @@ body {
             margin: 1rem;
             padding: 1rem;
           }
-          @include break.breakpoint(small) {
-            width: 15rem;
-          }
-        }
-        .addCer {
-          @include layout.flexCenter();
-          flex-direction: column;
-          p {
-            margin: 1rem;
-            font-size: text.$smallSize;
-
-            a {
-              cursor: pointer;
-              color: color.$black;
-            }
-          }
-
-          button {
-            width: 8rem;
-            height: 2.5rem;
-            font-size: text.$midSize;
-            border-radius: 20px;
-            border: none;
-            background-color: color.$white;
-            cursor: pointer;
-            @include break.breakpoint(small) {
-              width: 6rem;
-              font-size: text.$halfSmall;
-            }
-          }
-        }
-      }
-      .lang-info {
-        @include layout.flexCenter();
-        flex-direction: column;
-        flex-wrap: wrap;
-
-        input {
-          margin: 1rem;
-          width: 20rem;
-          height: 3rem;
-          border-radius: 10px;
-          outline: none;
-          font-size: 1.2rem;
-          &::placeholder {
-            margin: 1rem;
-            padding: 1rem;
-          }
-          @include break.breakpoint(small) {
-            width: 15rem;
-          }
-        }
-        .addLang {
-          @include layout.flexCenter();
-          flex-direction: column;
-          p {
-            margin: 1rem;
-            font-size: text.$smallSize;
-
-            a {
-              cursor: pointer;
-              color: color.$black;
-            }
-          }
-
-          button {
-            width: 8rem;
-            height: 2.5rem;
-            font-size: text.$midSize;
-            border-radius: 20px;
-            border: none;
-            background-color: color.$white;
-            cursor: pointer;
-            @include break.breakpoint(small) {
-              width: 6rem;
-              font-size: text.$halfSmall;
-            }
-          }
-        }
-      }
-      .skills-info {
-        @include layout.flexCenter();
-        flex-direction: column;
-        flex-wrap: wrap;
-        .addSkill {
-          @include layout.flexCenter();
-          flex-direction: column;
-          p {
-            margin: 1rem;
-            font-size: text.$smallSize;
-
-            a {
-              cursor: pointer;
-              color: color.$black;
-            }
-          }
-
-          button {
-            width: 8rem;
-            height: 2.5rem;
-            font-size: text.$midSize;
-            border-radius: 20px;
-            border: none;
-            background-color: color.$white;
-            cursor: pointer;
-            @include break.breakpoint(small) {
-              width: 6rem;
-              font-size: text.$halfSmall;
-            }
-          }
         }
       }
 
-      img {
+      .infoPic {
+        border-radius: 30%;
+        @include break.breakpoint(small) {
+          width: 300px;
+        }
+        display: none;
+      }
+      .finishBtn {
+        cursor: pointer;
+        // transform: translateY(-15rem);
+        border: none;
+        color: color.$white;
+        font-size: text.$midSize;
+        background-color: color.$blobPurp;
+        width: 25rem;
+        height: 5rem;
         border-radius: 5rem;
-        margin: 1rem;
-      }
-      input {
-        margin: 1rem;
-        width: 20rem;
-        height: 3rem;
-        border-radius: 10px;
-        outline: none;
-        font-size: 1.2rem;
-        &::placeholder {
-          margin: 1rem;
-          padding: 1rem;
+        margin: 2rem auto;
+        @include break.breakpoint(small) {
+          width: 15rem;
+          font-size: text.$halfSmall;
         }
-      }
-    }
-
-    .finishBtn {
-      cursor: pointer;
-      // transform: translateY(-15rem);
-      border: none;
-      color: color.$white;
-      font-size: text.$midSize;
-      background-color: color.$blobPurp;
-      width: 25rem;
-      height: 5rem;
-      border-radius: 5rem;
-      margin: 2rem auto;
-      @include break.breakpoint(small) {
-        width: 15rem;
-        font-size: text.$halfSmall;
       }
     }
   }
+
+  // for JS stuff
 }

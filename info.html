@@ -16,82 +16,152 @@
           <a href="#">تواصل معنا </a>
         </div>
       </nav>
-      <form action="#">
+      <form action="#" class="info-box">
         <div class="first-info">
           <h1>المعلومات الشخصية</h1>
-          <div>
-            <input type="text" name="" id="" placeholder="الاسم الثنائي" />
-            <input type="text" name="" id="" placeholder="مسماك الوظيفي " />
-            <input type="email" name="" id="" placeholder="البريد الإلكتروني" />
-            <input
-              type="text"
-              name=""
-              id=""
-              placeholder="موقعك الشخصي او حسابك في لينكدان"
-            />
+          <div class="input-layout">
+            <div class="first-name">
+              <input type="text" name="name" required="" autocomplete="off" />
+              <label for="name">الاسم الأول </label>
+            </div>
+            <div class="last-name">
+              <input type="text" name="job" required="" autocomplete="off" />
+              <label for="job"> الاسم الأخير</label>
+            </div>
+            <div class="email">
+              <input type="email" name="email" required="" autocomplete="off" />
+              <label for="email">البريد الالكتروني</label>
+            </div>
+            <div class="phone">
+              <input type="text" name="phone" required="" autocomplete="off" />
+              <label for="phone">رقم الجوال </label>
+            </div>
+            <div class="linkedIn">
+              <input type="text" name="phone" required="" autocomplete="off" />
+              <label for="phone">موقعك الشخصي أو حساب لينكدان</label>
+              <button>لا أملك حساب</button>
+            </div>
           </div>
-        </div>
-        <div class="experience">
-          <h1>الخبرات</h1>
-          <div>
-            <input type="text" name="" id="" placeholder="جهة العمل" />
-            <input type="text" name="" id="" placeholder="المسمى الوظيفي " />
-            <input type="date" name="" id="" placeholder="تاريخ البداية " />
-            <input type="date" name="" id="" placeholder="تاريخ النهاية" />
+          <div class="experience">
+            <h1>الخبرات</h1>
+            <div class="input-layout">
+              <div class="job">
+                <input type="text" name="name" required="" autocomplete="off" />
+                <label for="name"> جهة العمل</label>
+              </div>
+              <div class="job-name">
+                <input type="text" name="name" required="" autocomplete="off" />
+                <label for="name"> المسمى الوظيفي </label>
+              </div>
+              <div class="start-date">
+                <input
+                  type="text"
+                  name="date"
+                  required=""
+                  autocomplete="off"
+                  onfocus="(this.type='date')"
+                  onblur="if(!this.value) this.type='text'"
+                />
+                <label for="name">تاريخ البداية </label>
+              </div>
+              <div class="end-date">
+                <input
+                  type="text"
+                  name="date"
+                  required=""
+                  autocomplete="off"
+                  onfocus="(this.type='date')"
+                  onblur="if(!this.value) this.type='text'"
+                />
+                <label for="name"> تاريخ النهاية </label>
+                <button>أعمل حاليا</button>
+              </div>
+              <div class="expe-details">
+                <h1>تفاصيل الخبرة</h1>
+                <textarea name="" id="" cols="90" rows="10"></textarea>
+                <div class="addExp">
+                  <p><a href=""> إضافة خبرة اخرى؟ </a></p>
+                  <button>إضافة</button>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <button class="next" id="next">
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 74 74"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="37"
+                cy="37"
+                r="35.5"
+                stroke="black"
+                stroke-width="3"
+              ></circle>
+              <path
+                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                fill="black"
+              ></path>
+            </svg>
+            <span>التالي</span>
+          </button>
         </div>
+        <img
+          class="profilePic"
+          src="./img/undraw_Profile_details_re_ch9r.png"
+          width="500px"
+          alt=""
+        />
+
         <div class="mid-layer">
-          <img
-            width="400px"
-            src="./img/undraw_personal_information_re_vw8a.png"
-            alt=""
-          />
-          <div class="expe-details">
-            <h1>تفاصيل الخبرة</h1>
-            <textarea name="" id="" cols="90" rows="10"></textarea>
-            <div class="addExp">
-              <p><a href=""> إضافة خبرة اخرى؟ </a></p>
+          <div class="certificate-info hide">
+            <h1>الشهادات</h1>
+            <div>
+              <input type="text" name="" id="" placeholder="اسم الجهة " />
+              <input type="text" name="" id="" placeholder="مسمى الشهادة" />
+              <input type="date" name="" id="" placeholder="تاريخ الإصدار" />
+            </div>
+            <div class="addCer">
+              <p><a href=""> إضافة شهادة اخرى؟ </a></p>
               <button>إضافة</button>
             </div>
           </div>
-        </div>
+          <div class="lang-info">
+            <h1>اللغات</h1>
+            <div>
+              <input type="text" name="" id="" placeholder="اللغة" />
+              <input type="text" name="" id="" placeholder="مستوى الاتقان" />
+            </div>
+            <div class="addLang">
+              <p><a href=""> إضافة لغة اخرى؟ </a></p>
+              <button>إضافة</button>
+            </div>
+          </div>
+          <div class="skills-info">
+            <h1>المهارات</h1>
+            <div>
+              <input type="text" name="" id="" placeholder="المهارة" />
+            </div>
+            <div class="addSkill">
+              <p><a href=""> إضافة مهارة اخرى؟ </a></p>
+              <button>إضافة</button>
+            </div>
+          </div>
 
-        <div class="certificate-info">
-          <h1>الشهادات</h1>
-          <div>
-            <input type="text" name="" id="" placeholder="اسم الجهة " />
-            <input type="text" name="" id="" placeholder="مسمى الشهادة" />
-            <input type="date" name="" id="" placeholder="تاريخ الإصدار" />
-          </div>
-          <div class="addCer">
-            <p><a href=""> إضافة شهادة اخرى؟ </a></p>
-            <button>إضافة</button>
-          </div>
+          <button class="finishBtn" type="submit">أنشئ سيرتي الذاتية</button>
         </div>
-        <div class="lang-info">
-          <h1>اللغات</h1>
-          <div>
-            <input type="text" name="" id="" placeholder="اللغة" />
-            <input type="text" name="" id="" placeholder="مستوى الاتقان" />
-          </div>
-          <div class="addLang">
-            <p><a href=""> إضافة لغة اخرى؟ </a></p>
-            <button>إضافة</button>
-          </div>
-        </div>
-        <div class="skills-info">
-          <h1>المهارات</h1>
-          <div>
-            <input type="text" name="" id="" placeholder="المهارة" />
-          </div>
-          <div class="addSkill">
-            <p><a href=""> إضافة مهارة اخرى؟ </a></p>
-            <button>إضافة</button>
-          </div>
-        </div>
-
-        <button class="finishBtn" type="submit">أنشئ سيرتي الذاتية</button>
+        <img
+          class="infoPic"
+          width="400px"
+          src="./img/undraw_personal_information_re_vw8a.png"
+          alt=""
+        />
       </form>
+      <script src="./info.js"></script>
     </div>
   </body>
 </html>

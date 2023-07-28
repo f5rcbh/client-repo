@@ -16,13 +16,6 @@ body {
   }
   // info layer
   .info-page {
-    // #active {
-    //   display: flex;
-    //   border: solid;
-    // }
-    // .hide {
-    //   display: none;
-    // }
     margin: auto;
     nav {
       @include layout.flexCenter();
@@ -254,6 +247,10 @@ body {
           }
         }
       }
+
+      .hide {
+        display: none;
+      }
       // experience layer the last one
 
       .mid-layer {
@@ -431,6 +428,9 @@ body {
           width: 300px;
         }
         display: none;
+      }
+      .active {
+        display: flex;
       }
       .finishBtn {
         cursor: pointer;

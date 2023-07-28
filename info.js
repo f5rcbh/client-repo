@@ -1,19 +1,21 @@
-// const nextPage = document.querySelector('#next')
-// const degree = document.querySelector('.certificate-info')
-// const form = document.querySelector('form')
-// const FInfo = document.querySelector('.first-info')
-// const certificate = document.querySelector('.certificate-info')
+ const nextPage = document.querySelector('#next')
+ const FInfo = document.querySelector('.first-info')
+ const porfilePic = document.querySelector('.profilePic')
+ const midIfno = document.querySelector('.mid-layer')
+ const infoPic = document.querySelector('.infoPic')
 
 
 
-// console.log(certificate)
-
-// nextPage.addEventListener('click',(e)=>{
-//     e.preventDefault()
+ 
+ nextPage.addEventListener('click',(e)=>{
+     e.preventDefault()
+     FInfo.classList.add('hide')
+     porfilePic.classList.add('hide')
+     midIfno.classList.add('active')
+     infoPic.classList.add('active')
+     
     
-    
-    
-// })
+ })
 
 
 

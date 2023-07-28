@@ -299,6 +299,9 @@ body .info-page .info-box .first-info .next > svg {
 body .info-page .info-box .first-info .next:active {
   transform: scale(0.95);
 }
+body .info-page .info-box .hide {
+  display: none;
+}
 body .info-page .info-box .mid-layer {
   display: flex;
   justify-content: center;
@@ -529,6 +532,9 @@ body .info-page .info-box .infoPic {
   body .info-page .info-box .infoPic {
     width: 300px;
   }
+}
+body .info-page .info-box .active {
+  display: flex;
 }
 body .info-page .info-box .finishBtn {
   cursor: pointer;

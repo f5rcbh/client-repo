@@ -81,6 +81,7 @@ body .info-page .info-box .profilePic {
   -o-object-fit: cover;
      object-fit: cover;
   order: 2;
+  display: none;
 }
 body .info-page .info-box .first-info {
   display: flex;
@@ -89,6 +90,7 @@ body .info-page .info-box .first-info {
   flex-direction: column;
   margin: 1rem;
   row-gap: 1rem;
+  display: none;
 }
 body .info-page .info-box .first-info h1 {
   margin-left: auto;
@@ -306,12 +308,10 @@ body .info-page .info-box .mid-layer {
   display: flex;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  row-gap: 2rem;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  display: none;
 }
 body .info-page .info-box .mid-layer .certificate-info,
 body .info-page .info-box .mid-layer .lang-info,
@@ -322,55 +322,132 @@ body .info-page .info-box .mid-layer .skills-info {
   flex-direction: column;
   flex-wrap: wrap;
 }
-body .info-page .info-box .mid-layer .certificate-info h1,
-body .info-page .info-box .mid-layer .lang-info h1,
-body .info-page .info-box .mid-layer .skills-info h1 {
-  margin-left: auto;
+body .info-page .info-box .mid-layer .certificate-info .input-layout,
+body .info-page .info-box .mid-layer .lang-info .input-layout,
+body .info-page .info-box .mid-layer .skills-info .input-layout {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
 }
-@media (max-width: 925px) {
-  body .info-page .info-box .mid-layer .certificate-info h1,
-  body .info-page .info-box .mid-layer .lang-info h1,
-  body .info-page .info-box .mid-layer .skills-info h1 {
-    font-size: 1.5rem;
-  }
+body .info-page .info-box .mid-layer .certificate-info .input-layout .placeName,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .lang,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .levelName,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .skills,
+body .info-page .info-box .mid-layer .lang-info .input-layout .placeName,
+body .info-page .info-box .mid-layer .lang-info .input-layout .certificateName,
+body .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate,
+body .info-page .info-box .mid-layer .lang-info .input-layout .lang,
+body .info-page .info-box .mid-layer .lang-info .input-layout .levelName,
+body .info-page .info-box .mid-layer .lang-info .input-layout .skills,
+body .info-page .info-box .mid-layer .skills-info .input-layout .placeName,
+body .info-page .info-box .mid-layer .skills-info .input-layout .certificateName,
+body .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate,
+body .info-page .info-box .mid-layer .skills-info .input-layout .lang,
+body .info-page .info-box .mid-layer .skills-info .input-layout .levelName,
+body .info-page .info-box .mid-layer .skills-info .input-layout .skills {
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
 }
-body .info-page .info-box .mid-layer .certificate-info div,
-body .info-page .info-box .mid-layer .lang-info div,
-body .info-page .info-box .mid-layer .skills-info div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-evenly;
-  -moz-column-gap: 5rem;
-       column-gap: 5rem;
-  flex-wrap: wrap;
-}
-body .info-page .info-box .mid-layer .certificate-info input,
-body .info-page .info-box .mid-layer .lang-info input,
-body .info-page .info-box .mid-layer .skills-info input {
-  margin: 1rem;
-  width: 20rem;
-  height: 3rem;
-  border-radius: 10px;
+body .info-page .info-box .mid-layer .certificate-info .input-layout .placeName input,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName input,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate input,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .lang input,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .levelName input,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .skills input,
+body .info-page .info-box .mid-layer .lang-info .input-layout .placeName input,
+body .info-page .info-box .mid-layer .lang-info .input-layout .certificateName input,
+body .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate input,
+body .info-page .info-box .mid-layer .lang-info .input-layout .lang input,
+body .info-page .info-box .mid-layer .lang-info .input-layout .levelName input,
+body .info-page .info-box .mid-layer .lang-info .input-layout .skills input,
+body .info-page .info-box .mid-layer .skills-info .input-layout .placeName input,
+body .info-page .info-box .mid-layer .skills-info .input-layout .certificateName input,
+body .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate input,
+body .info-page .info-box .mid-layer .skills-info .input-layout .lang input,
+body .info-page .info-box .mid-layer .skills-info .input-layout .levelName input,
+body .info-page .info-box .mid-layer .skills-info .input-layout .skills input {
+  font-size: 100%;
+  padding: 1em;
   outline: none;
-  font-size: 1.2rem;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 20rem;
 }
-body .info-page .info-box .mid-layer .certificate-info input::-moz-placeholder, body .info-page .info-box .mid-layer .lang-info input::-moz-placeholder, body .info-page .info-box .mid-layer .skills-info input::-moz-placeholder {
-  margin: 1rem;
-  padding: 1rem;
+body .info-page .info-box .mid-layer .certificate-info .input-layout .placeName label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .lang label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .levelName label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .skills label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .placeName label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .certificateName label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .lang label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .levelName label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .skills label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .placeName label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .certificateName label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .lang label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .levelName label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .skills label {
+  font-size: 100%;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  float: right;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
 }
-body .info-page .info-box .mid-layer .certificate-info input::placeholder,
-body .info-page .info-box .mid-layer .lang-info input::placeholder,
-body .info-page .info-box .mid-layer .skills-info input::placeholder {
-  margin: 1rem;
-  padding: 1rem;
+body .info-page .info-box .mid-layer .certificate-info .input-layout .placeName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .lang :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .levelName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .certificate-info .input-layout .skills :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .placeName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .certificateName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .lang :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .levelName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .lang-info .input-layout .skills :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .placeName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .certificateName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .lang :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .levelName :is(input:focus, input:valid) ~ label,
+body .info-page .info-box .mid-layer .skills-info .input-layout .skills :is(input:focus, input:valid) ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #ffffff;
 }
-@media (max-width: 925px) {
-  body .info-page .info-box .mid-layer .certificate-info input,
-  body .info-page .info-box .mid-layer .lang-info input,
-  body .info-page .info-box .mid-layer .skills-info input {
-    width: 15rem;
-  }
+body .info-page .info-box .mid-layer .certificate-info .input-layout .placeName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .certificate-info .input-layout .lang :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .certificate-info .input-layout .levelName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .certificate-info .input-layout .skills :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .lang-info .input-layout .placeName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .lang-info .input-layout .certificateName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .lang-info .input-layout .lang :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .lang-info .input-layout .levelName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .lang-info .input-layout .skills :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .skills-info .input-layout .placeName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .skills-info .input-layout .certificateName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .skills-info .input-layout .lang :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .skills-info .input-layout .levelName :is(input:focus, input:valid),
+body .info-page .info-box .mid-layer .skills-info .input-layout .skills :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
 }
 body .info-page .info-box .mid-layer .certificate-info .addCer,
 body .info-page .info-box .mid-layer .lang-info .addCer,
@@ -378,7 +455,6 @@ body .info-page .info-box .mid-layer .skills-info .addCer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 body .info-page .info-box .mid-layer .certificate-info .addCer p,
 body .info-page .info-box .mid-layer .lang-info .addCer p,
@@ -395,12 +471,12 @@ body .info-page .info-box .mid-layer .skills-info .addCer p a {
 body .info-page .info-box .mid-layer .certificate-info .addCer button,
 body .info-page .info-box .mid-layer .lang-info .addCer button,
 body .info-page .info-box .mid-layer .skills-info .addCer button {
+  background-color: #cacaca;
   width: 8rem;
   height: 2.5rem;
   font-size: 2rem;
   border-radius: 20px;
   border: none;
-  background-color: #ffffff;
   cursor: pointer;
 }
 @media (max-width: 925px) {
@@ -443,7 +519,9 @@ body .info-page .info-box .mid-layer .lang-info .addLang {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  grid-column: 2;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
 }
 body .info-page .info-box .mid-layer .lang-info .addLang p {
   margin: 1rem;
@@ -461,6 +539,7 @@ body .info-page .info-box .mid-layer .lang-info .addLang button {
   border: none;
   background-color: #ffffff;
   cursor: pointer;
+  background-color: #cacaca;
 }
 @media (max-width: 925px) {
   body .info-page .info-box .mid-layer .lang-info .addLang button {
@@ -479,7 +558,7 @@ body .info-page .info-box .mid-layer .skills-info .addSkill {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
 body .info-page .info-box .mid-layer .skills-info .addSkill p {
   margin: 1rem;
@@ -497,6 +576,7 @@ body .info-page .info-box .mid-layer .skills-info .addSkill button {
   border: none;
   background-color: #ffffff;
   cursor: pointer;
+  background-color: #cacaca;
 }
 @media (max-width: 925px) {
   body .info-page .info-box .mid-layer .skills-info .addSkill button {
@@ -526,7 +606,6 @@ body .info-page .info-box .mid-layer input::placeholder {
 }
 body .info-page .info-box .infoPic {
   border-radius: 30%;
-  display: none;
 }
 @media (max-width: 925px) {
   body .info-page .info-box .infoPic {

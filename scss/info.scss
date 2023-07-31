@@ -54,7 +54,7 @@ body {
         height: 600px;
         object-fit: cover;
         order: 2;
-        // display: none;
+        display: none;
       }
       width: 60%;
       margin: 2rem auto;
@@ -71,10 +71,10 @@ body {
       // info styles
       .first-info {
         @include layout.flexCenter();
-        // display: none;
         flex-direction: column;
         margin: 1rem;
         row-gap: 1rem;
+        display: none;
         h1 {
           margin-left: auto;
           font-size: text.$largeSize;
@@ -247,19 +247,20 @@ body {
           }
         }
       }
-
+      // for JS
       .hide {
         display: none;
       }
+      //
       // experience layer the last one
 
       .mid-layer {
         @include layout.flexCenter();
-        column-gap: 2rem;
+        row-gap: 2rem;
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
-        display: none;
+        // display: none;
 
         // this is for adding experience
 
@@ -269,36 +270,55 @@ body {
           @include layout.flexCenter();
           flex-direction: column;
           flex-wrap: wrap;
-          h1 {
-            margin-left: auto;
-            @include break.breakpoint(small) {
-              font-size: text.$halfSmall;
+          .input-layout {
+            @include layout.gridCenter();
+            grid-template-columns: 1fr 1fr;
+            .placeName,
+            .certificateName,
+            .releaseDate,
+            .lang,
+            .levelName,
+            .skills {
+              font-family: "Segoe UI", sans-serif;
+              position: relative;
+              input {
+                font-size: 100%;
+                padding: 1em;
+                outline: none;
+                border: 2px solid rgb(200, 200, 200);
+                background-color: transparent;
+                border-radius: 20px;
+                width: 20rem;
+              }
+
+              label {
+                font-size: 100%;
+                position: absolute;
+                right: 1.5rem;
+                top: 1rem;
+                float: right;
+                padding: 0.8em;
+                margin-left: 0.5em;
+                pointer-events: none;
+                transition: all 0.3s ease;
+                color: rgb(100, 100, 100);
+              }
+
+              :is(input:focus, input:valid) ~ label {
+                transform: translateY(-50%) scale(0.9);
+                margin: 0em;
+                margin-left: 1.3em;
+                padding: 0.4em;
+                background-color: color.$white;
+              }
+              :is(input:focus, input:valid) {
+                border-color: rgb(150, 150, 200);
+              }
             }
           }
-          div {
-            @include layout.flexCenter();
-            justify-content: space-evenly;
-            column-gap: 5rem;
-            flex-wrap: wrap;
-          }
-          input {
-            margin: 1rem;
-            width: 20rem;
-            height: 3rem;
-            border-radius: 10px;
-            outline: none;
-            font-size: 1.2rem;
-            &::placeholder {
-              margin: 1rem;
-              padding: 1rem;
-            }
-            @include break.breakpoint(small) {
-              width: 15rem;
-            }
-          }
+
           .addCer {
             @include layout.flexCenter();
-            flex-direction: column;
             p {
               margin: 1rem;
               font-size: text.$smallSize;
@@ -310,12 +330,12 @@ body {
             }
 
             button {
+              background-color: color.$active;
               width: 8rem;
               height: 2.5rem;
               font-size: text.$midSize;
               border-radius: 20px;
               border: none;
-              background-color: color.$white;
               cursor: pointer;
               @include break.breakpoint(small) {
                 width: 6rem;
@@ -345,11 +365,12 @@ body {
           }
           .addLang {
             @include layout.flexCenter();
-            flex-direction: column;
+            grid-column: 2;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
             p {
               margin: 1rem;
               font-size: text.$smallSize;
-
               a {
                 cursor: pointer;
                 color: color.$black;
@@ -364,6 +385,7 @@ body {
               border: none;
               background-color: color.$white;
               cursor: pointer;
+              background-color: color.$active;
               @include break.breakpoint(small) {
                 width: 6rem;
                 font-size: text.$halfSmall;
@@ -377,7 +399,7 @@ body {
           flex-wrap: wrap;
           .addSkill {
             @include layout.flexCenter();
-            flex-direction: column;
+            flex-direction: row-reverse;
             p {
               margin: 1rem;
               font-size: text.$smallSize;
@@ -396,6 +418,7 @@ body {
               border: none;
               background-color: color.$white;
               cursor: pointer;
+              background-color: color.$active;
               @include break.breakpoint(small) {
                 width: 6rem;
                 font-size: text.$halfSmall;
@@ -427,11 +450,13 @@ body {
         @include break.breakpoint(small) {
           width: 300px;
         }
-        display: none;
+        // display: none;
       }
+      // for js
       .active {
         display: flex;
       }
+      //
       .finishBtn {
         cursor: pointer;
         // transform: translateY(-15rem);

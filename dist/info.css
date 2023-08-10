@@ -27,6 +27,7 @@ html .info-page {
   flex-direction: column;
   align-items: stretch;
   height: 100vh;
+  margin: 1rem;
 }
 @media (max-width: 425px) {
   html .info-page {
@@ -44,7 +45,7 @@ html .info-page nav {
 }
 @media (max-width: 425px) {
   html .info-page nav {
-    width: 100%;
+    width: 80%;
   }
 }
 html .info-page nav .hambar {
@@ -52,9 +53,7 @@ html .info-page nav .hambar {
 }
 @media (max-width: 425px) {
   html .info-page nav .hambar {
-    display: flex;
-    position: fixed;
-    top: 0.5rem;
+    display: block;
     width: 50px;
     height: auto;
     z-index: 3;
@@ -63,18 +62,19 @@ html .info-page nav .hambar {
 html .info-page nav h1 {
   font-size: 6rem;
 }
+html .info-page nav h1 a {
+  text-decoration: none;
+  color: inherit;
+}
 @media (max-width: 768px) {
   html .info-page nav h1 {
     font-size: 3rem;
   }
 }
-html .info-page nav h1 a {
-  text-decoration: none;
-  color: inherit;
-}
 @media (max-width: 425px) {
   html .info-page nav h1 {
     font-size: 2rem;
+    margin-right: auto;
   }
 }
 html .info-page nav div {
@@ -143,6 +143,15 @@ html .info-page .info-box {
     width: 25rem;
   }
 }
+@media (max-width: 375px) {
+  html .info-page .info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20rem;
+  }
+}
 html .info-page .info-box .profilePic {
   width: 35rem;
   order: 2;
@@ -197,6 +206,12 @@ html .info-page .info-box .first-info .experience h1 {
   html .info-page .info-box .first-info .input-layout h1,
   html .info-page .info-box .first-info .experience h1 {
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 375px) {
+  html .info-page .info-box .first-info .input-layout h1,
+  html .info-page .info-box .first-info .experience h1 {
+    margin: auto;
   }
 }
 @media (max-width: 1440px) {
@@ -328,6 +343,28 @@ html .info-page .info-box .first-info .experience .end-date input {
     width: 20rem;
   }
 }
+@media (max-width: 375px) {
+  html .info-page .info-box .first-info .input-layout .first-name input,
+  html .info-page .info-box .first-info .input-layout .last-name input,
+  html .info-page .info-box .first-info .input-layout .email input,
+  html .info-page .info-box .first-info .input-layout .phone input,
+  html .info-page .info-box .first-info .input-layout .linkedIn input,
+  html .info-page .info-box .first-info .input-layout .job input,
+  html .info-page .info-box .first-info .input-layout .job-name input,
+  html .info-page .info-box .first-info .input-layout .start-date input,
+  html .info-page .info-box .first-info .input-layout .end-date input,
+  html .info-page .info-box .first-info .experience .first-name input,
+  html .info-page .info-box .first-info .experience .last-name input,
+  html .info-page .info-box .first-info .experience .email input,
+  html .info-page .info-box .first-info .experience .phone input,
+  html .info-page .info-box .first-info .experience .linkedIn input,
+  html .info-page .info-box .first-info .experience .job input,
+  html .info-page .info-box .first-info .experience .job-name input,
+  html .info-page .info-box .first-info .experience .start-date input,
+  html .info-page .info-box .first-info .experience .end-date input {
+    width: 15rem;
+  }
+}
 html .info-page .info-box .first-info .input-layout .first-name label,
 html .info-page .info-box .first-info .input-layout .last-name label,
 html .info-page .info-box .first-info .input-layout .email label,
@@ -410,6 +447,12 @@ html .info-page .info-box .first-info .input-layout .linkedIn input,
 html .info-page .info-box .first-info .experience .linkedIn input {
   width: 20rem;
 }
+@media (max-width: 375px) {
+  html .info-page .info-box .first-info .input-layout .linkedIn input,
+  html .info-page .info-box .first-info .experience .linkedIn input {
+    width: 18rem;
+  }
+}
 html .info-page .info-box .first-info .input-layout .linkedIn button,
 html .info-page .info-box .first-info .experience .linkedIn button {
   position: absolute;
@@ -430,6 +473,14 @@ html .info-page .info-box .first-info .experience .linkedIn button {
     left: 0;
     width: 4rem;
     height: 2.5rem;
+  }
+}
+@media (max-width: 375px) {
+  html .info-page .info-box .first-info .input-layout .linkedIn button,
+  html .info-page .info-box .first-info .experience .linkedIn button {
+    width: 3rem;
+    height: 2rem;
+    font-size: 0.7rem;
   }
 }
 html .info-page .info-box .first-info .input-layout .end-date,
@@ -466,6 +517,12 @@ html .info-page .info-box .first-info .experience .expe-details {
     align-items: center;
   }
 }
+@media (max-width: 375px) {
+  html .info-page .info-box .first-info .input-layout .expe-details,
+  html .info-page .info-box .first-info .experience .expe-details {
+    margin-top: 3rem;
+  }
+}
 html .info-page .info-box .first-info .input-layout .expe-details h1,
 html .info-page .info-box .first-info .experience .expe-details h1 {
   font-size: 1.5rem;
@@ -495,6 +552,13 @@ html .info-page .info-box .first-info .experience .expe-details textarea {
   html .info-page .info-box .first-info .experience .expe-details textarea {
     width: 20rem;
     height: 10rem;
+  }
+}
+@media (max-width: 375px) {
+  html .info-page .info-box .first-info .input-layout .expe-details textarea,
+  html .info-page .info-box .first-info .experience .expe-details textarea {
+    width: 15rem;
+    height: 5rem;
   }
 }
 html .info-page .info-box .first-info .input-layout .expe-details .addExp,
@@ -532,9 +596,6 @@ html .info-page .info-box .first-info .experience .expe-details .addExp button {
     font-size: 1.5rem;
   }
 }
-html .info-page .info-box .first-info .experience {
-  gap: 1rem 0;
-}
 html .info-page .info-box .first-info .next {
   cursor: pointer;
   transition: all 0.2s;
@@ -567,10 +628,8 @@ html .info-page .info-box .mid-layer {
   display: flex;
   justify-content: center;
   align-items: center;
-  row-gap: 2rem;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 1rem;
   display: none;
 }
 html .info-page .info-box .mid-layer .certificate-info,
@@ -582,12 +641,34 @@ html .info-page .info-box .mid-layer .skills-info {
   flex-direction: column;
   flex-wrap: wrap;
 }
+html .info-page .info-box .mid-layer .certificate-info h1,
+html .info-page .info-box .mid-layer .lang-info h1,
+html .info-page .info-box .mid-layer .skills-info h1 {
+  margin-left: auto;
+}
+@media (max-width: 320px) {
+  html .info-page .info-box .mid-layer .certificate-info h1,
+  html .info-page .info-box .mid-layer .lang-info h1,
+  html .info-page .info-box .mid-layer .skills-info h1 {
+    font-size: 1.5rem;
+  }
+}
 html .info-page .info-box .mid-layer .certificate-info .input-layout,
 html .info-page .info-box .mid-layer .lang-info .input-layout,
 html .info-page .info-box .mid-layer .skills-info .input-layout {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 425px) {
+  html .info-page .info-box .mid-layer .certificate-info .input-layout,
+  html .info-page .info-box .mid-layer .lang-info .input-layout,
+  html .info-page .info-box .mid-layer .skills-info .input-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName,
 html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName,
@@ -636,6 +717,94 @@ html .info-page .info-box .mid-layer .skills-info .input-layout .skills input {
   border-radius: 20px;
   width: 20rem;
 }
+@media (max-width: 1024px) {
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .skills input {
+    width: 15rem;
+  }
+}
+@media (max-width: 768px) {
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .skills input {
+    width: 10rem;
+  }
+}
+@media (max-width: 425px) {
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .skills input {
+    width: 15rem;
+  }
+}
+@media (max-width: 320px) {
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .skills input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .placeName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .certificateName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .lang input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .levelName input,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .skills input {
+    width: 13rem;
+  }
+}
 html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName label,
 html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName label,
 html .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate label,
@@ -664,6 +833,28 @@ html .info-page .info-box .mid-layer .skills-info .input-layout .skills label {
   pointer-events: none;
   transition: all 0.3s ease;
   color: rgb(100, 100, 100);
+}
+@media (max-width: 320px) {
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName label,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName label,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .releaseDate label,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .lang label,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .levelName label,
+  html .info-page .info-box .mid-layer .certificate-info .input-layout .skills label,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .placeName label,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .certificateName label,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .releaseDate label,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .lang label,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .levelName label,
+  html .info-page .info-box .mid-layer .lang-info .input-layout .skills label,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .placeName label,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .certificateName label,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .releaseDate label,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .lang label,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .levelName label,
+  html .info-page .info-box .mid-layer .skills-info .input-layout .skills label {
+    font-size: 0.9rem;
+  }
 }
 html .info-page .info-box .mid-layer .certificate-info .input-layout .placeName :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .mid-layer .certificate-info .input-layout .certificateName :is(input:focus, input:valid) ~ label,
@@ -722,6 +913,13 @@ html .info-page .info-box .mid-layer .skills-info .addCer p {
   margin: 1rem;
   font-size: 1rem;
 }
+@media (max-width: 1024px) {
+  html .info-page .info-box .mid-layer .certificate-info .addCer p,
+  html .info-page .info-box .mid-layer .lang-info .addCer p,
+  html .info-page .info-box .mid-layer .skills-info .addCer p {
+    font-size: 0.9rem;
+  }
+}
 html .info-page .info-box .mid-layer .certificate-info .addCer p a,
 html .info-page .info-box .mid-layer .lang-info .addCer p a,
 html .info-page .info-box .mid-layer .skills-info .addCer p a {
@@ -739,12 +937,20 @@ html .info-page .info-box .mid-layer .skills-info .addCer button {
   border: none;
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html .info-page .info-box .mid-layer .certificate-info .addCer button,
   html .info-page .info-box .mid-layer .lang-info .addCer button,
   html .info-page .info-box .mid-layer .skills-info .addCer button {
     width: 6rem;
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  html .info-page .info-box .mid-layer .certificate-info .addCer button,
+  html .info-page .info-box .mid-layer .lang-info .addCer button,
+  html .info-page .info-box .mid-layer .skills-info .addCer button {
+    width: 4rem;
+    font-size: 1rem;
   }
 }
 html .info-page .info-box .mid-layer .lang-info {
@@ -787,6 +993,11 @@ html .info-page .info-box .mid-layer .lang-info .addLang p {
   margin: 1rem;
   font-size: 1rem;
 }
+@media (max-width: 1024px) {
+  html .info-page .info-box .mid-layer .lang-info .addLang p {
+    font-size: 0.9rem;
+  }
+}
 html .info-page .info-box .mid-layer .lang-info .addLang p a {
   cursor: pointer;
   color: #000000;
@@ -801,10 +1012,16 @@ html .info-page .info-box .mid-layer .lang-info .addLang button {
   cursor: pointer;
   background-color: #cacaca;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html .info-page .info-box .mid-layer .lang-info .addLang button {
     width: 6rem;
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  html .info-page .info-box .mid-layer .lang-info .addLang button {
+    width: 4rem;
+    font-size: 1rem;
   }
 }
 html .info-page .info-box .mid-layer .skills-info {
@@ -824,6 +1041,11 @@ html .info-page .info-box .mid-layer .skills-info .addSkill p {
   margin: 1rem;
   font-size: 1rem;
 }
+@media (max-width: 1024px) {
+  html .info-page .info-box .mid-layer .skills-info .addSkill p {
+    font-size: 0.9rem;
+  }
+}
 html .info-page .info-box .mid-layer .skills-info .addSkill p a {
   cursor: pointer;
   color: #000000;
@@ -834,14 +1056,19 @@ html .info-page .info-box .mid-layer .skills-info .addSkill button {
   font-size: 2rem;
   border-radius: 20px;
   border: none;
-  background-color: #ffffff;
   cursor: pointer;
   background-color: #cacaca;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html .info-page .info-box .mid-layer .skills-info .addSkill button {
     width: 6rem;
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  html .info-page .info-box .mid-layer .skills-info .addSkill button {
+    width: 4rem;
+    font-size: 1rem;
   }
 }
 html .info-page .info-box .mid-layer img {
@@ -868,9 +1095,14 @@ html .info-page .info-box .infoPic {
   border-radius: 30%;
   display: none;
 }
+@media (max-width: 1440px) {
+  html .info-page .info-box .infoPic {
+    width: 20rem;
+  }
+}
 @media (max-width: 768px) {
   html .info-page .info-box .infoPic {
-    width: 300px;
+    width: 13rem;
   }
 }
 html .info-page .info-box .active {

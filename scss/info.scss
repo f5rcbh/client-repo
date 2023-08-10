@@ -43,6 +43,7 @@ html {
     flex-direction: column;
     align-items: stretch;
     height: 100vh;
+    margin: 1rem;
     @include break.breakpoint(largePhone) {
       @include layout.gridCenter();
       grid-template-columns: 1fr;
@@ -54,14 +55,13 @@ html {
       justify-content: stretch;
       margin: 1rem 5rem;
       @include break.breakpoint(largePhone) {
-        width: 100%;
+        width: 80%;
       }
       .hambar {
         display: none;
         @include break.breakpoint(largePhone) {
-          display: flex;
-          position: fixed;
-          top: 0.5rem;
+          display: block;
+
           width: 50px;
           height: auto;
           z-index: 3;
@@ -69,15 +69,17 @@ html {
       }
       h1 {
         font-size: text.$XLargeSize;
-        @include break.breakpoint(small) {
-          font-size: text.$largeSize;
-        }
+
         a {
           text-decoration: none;
           color: inherit;
         }
+        @include break.breakpoint(small) {
+          font-size: text.$largeSize;
+        }
         @include break.breakpoint(largePhone) {
           font-size: text.$midSize;
+          margin-right: auto;
         }
       }
       div {
@@ -135,10 +137,17 @@ html {
         grid-template-columns: 1fr;
         width: 25rem;
       }
+      @include break.breakpoint(mediumPhone) {
+        @include layout.flexCenter();
+        flex-direction: column;
+        width: 20rem;
+      }
+
       //for the left side pic
       .profilePic {
         width: 35rem;
         order: 2;
+        // display: none;
         @include break.breakpoint(large) {
           width: 80%;
         }
@@ -160,6 +169,8 @@ html {
           row-gap: 0;
         }
 
+        // display: none;
+
         .input-layout,
         .experience {
           @include layout.gridCenter();
@@ -174,6 +185,9 @@ html {
             }
             @include break.breakpoint(largePhone) {
               font-size: text.$halfSmall;
+            }
+            @include break.breakpoint(mediumPhone) {
+              margin: auto;
             }
           }
 
@@ -213,6 +227,9 @@ html {
               @include break.breakpoint(largePhone) {
                 width: 20rem;
               }
+              @include break.breakpoint(mediumPhone) {
+                width: 15rem;
+              }
             }
 
             label {
@@ -245,6 +262,9 @@ html {
             grid-column: 1/3;
             input {
               width: 20rem;
+              @include break.breakpoint(mediumPhone) {
+                width: 18rem;
+              }
             }
             button {
               position: absolute;
@@ -262,6 +282,11 @@ html {
                 left: 0;
                 width: 4rem;
                 height: 2.5rem;
+              }
+              @include break.breakpoint(mediumPhone) {
+                width: 3rem;
+                height: 2rem;
+                font-size: 0.7rem;
               }
             }
           }
@@ -290,6 +315,9 @@ html {
             @include break.breakpoint(small) {
               align-items: center;
             }
+            @include break.breakpoint(mediumPhone) {
+              margin-top: 3rem;
+            }
             h1 {
               font-size: text.$halfSmall;
               margin-left: auto;
@@ -308,6 +336,10 @@ html {
               @include break.breakpoint(small) {
                 width: 20rem;
                 height: 10rem;
+              }
+              @include break.breakpoint(mediumPhone) {
+                width: 15rem;
+                height: 5rem;
               }
             }
             .addExp {
@@ -340,9 +372,6 @@ html {
               }
             }
           }
-        }
-        .experience {
-          gap: 1rem 0;
         }
 
         // this is for the next page button
@@ -383,10 +412,8 @@ html {
 
       .mid-layer {
         @include layout.flexCenter();
-        row-gap: 2rem;
-        justify-content: space-around;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 1rem;
         display: none;
 
         // this is for adding experience
@@ -397,9 +424,19 @@ html {
           @include layout.flexCenter();
           flex-direction: column;
           flex-wrap: wrap;
+          h1 {
+            margin-left: auto;
+            @include break.breakpoint(smallPhone) {
+              font-size: text.$halfSmall;
+            }
+          }
           .input-layout {
             @include layout.gridCenter();
             grid-template-columns: 1fr 1fr;
+            @include break.breakpoint(largePhone) {
+              @include layout.flexCenter();
+              flex-direction: column;
+            }
             .placeName,
             .certificateName,
             .releaseDate,
@@ -416,6 +453,18 @@ html {
                 background-color: transparent;
                 border-radius: 20px;
                 width: 20rem;
+                @include break.breakpoint(medium) {
+                  width: 15rem;
+                }
+                @include break.breakpoint(small) {
+                  width: 10rem;
+                }
+                @include break.breakpoint(largePhone) {
+                  width: 15rem;
+                }
+                @include break.breakpoint(smallPhone) {
+                  width: 13rem;
+                }
               }
 
               label {
@@ -429,6 +478,9 @@ html {
                 pointer-events: none;
                 transition: all 0.3s ease;
                 color: rgb(100, 100, 100);
+                @include break.breakpoint(smallPhone) {
+                  font-size: 0.9rem;
+                }
               }
 
               :is(input:focus, input:valid) ~ label {
@@ -449,7 +501,9 @@ html {
             p {
               margin: 1rem;
               font-size: text.$smallSize;
-
+              @include break.breakpoint(medium) {
+                font-size: 0.9rem;
+              }
               a {
                 cursor: pointer;
                 color: color.$black;
@@ -464,9 +518,14 @@ html {
               border-radius: 20px;
               border: none;
               cursor: pointer;
-              @include break.breakpoint(small) {
+              @include break.breakpoint(medium) {
                 width: 6rem;
                 font-size: text.$halfSmall;
+              }
+
+              @include break.breakpoint(small) {
+                width: 4rem;
+                font-size: text.$smallSize;
               }
             }
           }
@@ -498,6 +557,9 @@ html {
             p {
               margin: 1rem;
               font-size: text.$smallSize;
+              @include break.breakpoint(medium) {
+                font-size: 0.9rem;
+              }
               a {
                 cursor: pointer;
                 color: color.$black;
@@ -513,9 +575,13 @@ html {
               background-color: color.$white;
               cursor: pointer;
               background-color: color.$active;
-              @include break.breakpoint(small) {
+              @include break.breakpoint(medium) {
                 width: 6rem;
                 font-size: text.$halfSmall;
+              }
+              @include break.breakpoint(small) {
+                width: 4rem;
+                font-size: text.$smallSize;
               }
             }
           }
@@ -530,7 +596,9 @@ html {
             p {
               margin: 1rem;
               font-size: text.$smallSize;
-
+              @include break.breakpoint(medium) {
+                font-size: 0.9rem;
+              }
               a {
                 cursor: pointer;
                 color: color.$black;
@@ -543,12 +611,15 @@ html {
               font-size: text.$midSize;
               border-radius: 20px;
               border: none;
-              background-color: color.$white;
               cursor: pointer;
               background-color: color.$active;
-              @include break.breakpoint(small) {
+              @include break.breakpoint(medium) {
                 width: 6rem;
                 font-size: text.$halfSmall;
+              }
+              @include break.breakpoint(small) {
+                width: 4rem;
+                font-size: text.$smallSize;
               }
             }
           }
@@ -574,8 +645,11 @@ html {
 
       .infoPic {
         border-radius: 30%;
+        @include break.breakpoint(large) {
+          width: 20rem;
+        }
         @include break.breakpoint(small) {
-          width: 300px;
+          width: 13rem;
         }
         display: none;
       }

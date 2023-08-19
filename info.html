@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>صمم سيرتك</title>
+
     <link rel="stylesheet" href="./dist/info.css" />
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
   </head>
   <body>
     <!-- <div class="alert">
@@ -69,14 +71,23 @@
               <label for="email">البريد الالكتروني</label>
             </div>
             <div class="phone">
-              <input
-                id="first-input"
-                type="text"
-                name="phone"
-                required=""
-                autocomplete="off"
-              />
-              <label for="phone">رقم الجوال </label>
+              <div class="selected-option">
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  required="Number"
+                  autocomplete="off"
+                />
+                <label for="phone">رقم الجوال </label>
+                <div class="flag">
+                  <strong>+44</strong>
+                  <span class="iconify" data-icon="flag:gb-4x3"></span>
+                </div>
+                <div class="options">
+                  <ol></ol>
+                </div>
+              </div>
             </div>
             <div class="linkedIn">
               <input
@@ -114,28 +125,50 @@
                 <label for="name"> المسمى الوظيفي </label>
               </div>
               <div class="start-date">
-                <input
-                  id="first-input"
-                  type="text"
-                  name="startJob"
-                  required=""
-                  autocomplete="off"
-                  onfocus="(this.type='date')"
-                  onblur="if(!this.value) this.type='text'"
-                />
-                <label for="name">تاريخ البداية </label>
+                <fieldset>
+                  <legend>بداية العمل</legend>
+                  <select name="year" id="startYear">
+                    <option value="">اختر سنة</option>
+                  </select>
+                  <select name="month" id="month">
+                    <option value="">اختر شهر</option>
+                    <option value="Jan">01</option>
+                    <option value="Feb">02</option>
+                    <option value="Mar">03</option>
+                    <option value="Apr">04</option>
+                    <option value="May">05</option>
+                    <option value="Jun">06</option>
+                    <option value="Jul">07</option>
+                    <option value="Aug">08</option>
+                    <option value="Sep">09</option>
+                    <option value="Oct">10</option>
+                    <option value="Nov">11</option>
+                    <option value="Dec">12</option>
+                  </select>
+                </fieldset>
               </div>
               <div class="end-date">
-                <input
-                  id="first-input"
-                  type="text"
-                  name="endJob"
-                  required=""
-                  autocomplete="off"
-                  onfocus="(this.type='date')"
-                  onblur="if(!this.value) this.type='text'"
-                />
-                <label for="name"> تاريخ النهاية </label>
+                <fieldset>
+                  <legend>نهاية العمل</legend>
+                  <select name="year" id="endYear">
+                    <option value="">اختر سنة</option>
+                  </select>
+                  <select name="month" id="month">
+                    <option value="">اختر شهر</option>
+                    <option value="Jan">01</option>
+                    <option value="Feb">02</option>
+                    <option value="Mar">03</option>
+                    <option value="Apr">04</option>
+                    <option value="May">05</option>
+                    <option value="Jun">06</option>
+                    <option value="Jul">07</option>
+                    <option value="Aug">08</option>
+                    <option value="Sep">09</option>
+                    <option value="Oct">10</option>
+                    <option value="Nov">11</option>
+                    <option value="Dec">12</option>
+                  </select>
+                </fieldset>
                 <button>أعمل حاليا</button>
               </div>
               <div class="expe-details">
@@ -147,7 +180,6 @@
                   rows="10"
                 ></textarea>
                 <div class="addExp">
-                  <p><a href=""> إضافة خبرة اخرى؟ </a></p>
                   <button>إضافة</button>
                 </div>
               </div>
@@ -276,7 +308,7 @@
           alt=""
         />
       </form>
-      <script src="./info.js"></script>
+      <script src="/info.js"></script>
     </div>
   </body>
 </html>

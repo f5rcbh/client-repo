@@ -27,7 +27,6 @@ html .info-page {
   flex-direction: column;
   align-items: stretch;
   height: 100vh;
-  margin: 1rem;
 }
 @media (max-width: 425px) {
   html .info-page {
@@ -230,6 +229,45 @@ html .info-page .info-box .first-info .experience h1 {
     padding-bottom: 2rem;
   }
 }
+html .info-page .info-box .first-info .input-layout .start-date,
+html .info-page .info-box .first-info .input-layout .end-date,
+html .info-page .info-box .first-info .experience .start-date,
+html .info-page .info-box .first-info .experience .end-date {
+  width: 100%;
+  justify-content: space-evenly;
+}
+html .info-page .info-box .first-info .input-layout .start-date fieldset,
+html .info-page .info-box .first-info .input-layout .end-date fieldset,
+html .info-page .info-box .first-info .experience .start-date fieldset,
+html .info-page .info-box .first-info .experience .end-date fieldset {
+  border: none;
+  padding: 0.5rem 0;
+}
+html .info-page .info-box .first-info .input-layout .start-date fieldset legend,
+html .info-page .info-box .first-info .input-layout .end-date fieldset legend,
+html .info-page .info-box .first-info .experience .start-date fieldset legend,
+html .info-page .info-box .first-info .experience .end-date fieldset legend {
+  font-size: 1.5rem;
+}
+html .info-page .info-box .first-info .input-layout .start-date select,
+html .info-page .info-box .first-info .input-layout .end-date select,
+html .info-page .info-box .first-info .experience .start-date select,
+html .info-page .info-box .first-info .experience .end-date select {
+  margin: 0 1rem;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  outline: none;
+}
+html .info-page .info-box .first-info .input-layout .start-date select option,
+html .info-page .info-box .first-info .input-layout .end-date select option,
+html .info-page .info-box .first-info .experience .start-date select option,
+html .info-page .info-box .first-info .experience .end-date select option {
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+}
 html .info-page .info-box .first-info .input-layout .first-name,
 html .info-page .info-box .first-info .input-layout .last-name,
 html .info-page .info-box .first-info .input-layout .email,
@@ -237,17 +275,13 @@ html .info-page .info-box .first-info .input-layout .phone,
 html .info-page .info-box .first-info .input-layout .linkedIn,
 html .info-page .info-box .first-info .input-layout .job,
 html .info-page .info-box .first-info .input-layout .job-name,
-html .info-page .info-box .first-info .input-layout .start-date,
-html .info-page .info-box .first-info .input-layout .end-date,
 html .info-page .info-box .first-info .experience .first-name,
 html .info-page .info-box .first-info .experience .last-name,
 html .info-page .info-box .first-info .experience .email,
 html .info-page .info-box .first-info .experience .phone,
 html .info-page .info-box .first-info .experience .linkedIn,
 html .info-page .info-box .first-info .experience .job,
-html .info-page .info-box .first-info .experience .job-name,
-html .info-page .info-box .first-info .experience .start-date,
-html .info-page .info-box .first-info .experience .end-date {
+html .info-page .info-box .first-info .experience .job-name {
   font-family: "Segoe UI", sans-serif;
   position: relative;
 }
@@ -258,17 +292,13 @@ html .info-page .info-box .first-info .input-layout .phone input,
 html .info-page .info-box .first-info .input-layout .linkedIn input,
 html .info-page .info-box .first-info .input-layout .job input,
 html .info-page .info-box .first-info .input-layout .job-name input,
-html .info-page .info-box .first-info .input-layout .start-date input,
-html .info-page .info-box .first-info .input-layout .end-date input,
 html .info-page .info-box .first-info .experience .first-name input,
 html .info-page .info-box .first-info .experience .last-name input,
 html .info-page .info-box .first-info .experience .email input,
 html .info-page .info-box .first-info .experience .phone input,
 html .info-page .info-box .first-info .experience .linkedIn input,
 html .info-page .info-box .first-info .experience .job input,
-html .info-page .info-box .first-info .experience .job-name input,
-html .info-page .info-box .first-info .experience .start-date input,
-html .info-page .info-box .first-info .experience .end-date input {
+html .info-page .info-box .first-info .experience .job-name input {
   font-size: 100%;
   padding: 1em;
   outline: none;
@@ -285,17 +315,13 @@ html .info-page .info-box .first-info .experience .end-date input {
   html .info-page .info-box .first-info .input-layout .linkedIn input,
   html .info-page .info-box .first-info .input-layout .job input,
   html .info-page .info-box .first-info .input-layout .job-name input,
-  html .info-page .info-box .first-info .input-layout .start-date input,
-  html .info-page .info-box .first-info .input-layout .end-date input,
   html .info-page .info-box .first-info .experience .first-name input,
   html .info-page .info-box .first-info .experience .last-name input,
   html .info-page .info-box .first-info .experience .email input,
   html .info-page .info-box .first-info .experience .phone input,
   html .info-page .info-box .first-info .experience .linkedIn input,
   html .info-page .info-box .first-info .experience .job input,
-  html .info-page .info-box .first-info .experience .job-name input,
-  html .info-page .info-box .first-info .experience .start-date input,
-  html .info-page .info-box .first-info .experience .end-date input {
+  html .info-page .info-box .first-info .experience .job-name input {
     width: 13rem;
   }
 }
@@ -307,17 +333,13 @@ html .info-page .info-box .first-info .experience .end-date input {
   html .info-page .info-box .first-info .input-layout .linkedIn input,
   html .info-page .info-box .first-info .input-layout .job input,
   html .info-page .info-box .first-info .input-layout .job-name input,
-  html .info-page .info-box .first-info .input-layout .start-date input,
-  html .info-page .info-box .first-info .input-layout .end-date input,
   html .info-page .info-box .first-info .experience .first-name input,
   html .info-page .info-box .first-info .experience .last-name input,
   html .info-page .info-box .first-info .experience .email input,
   html .info-page .info-box .first-info .experience .phone input,
   html .info-page .info-box .first-info .experience .linkedIn input,
   html .info-page .info-box .first-info .experience .job input,
-  html .info-page .info-box .first-info .experience .job-name input,
-  html .info-page .info-box .first-info .experience .start-date input,
-  html .info-page .info-box .first-info .experience .end-date input {
+  html .info-page .info-box .first-info .experience .job-name input {
     width: 12rem;
   }
 }
@@ -329,17 +351,13 @@ html .info-page .info-box .first-info .experience .end-date input {
   html .info-page .info-box .first-info .input-layout .linkedIn input,
   html .info-page .info-box .first-info .input-layout .job input,
   html .info-page .info-box .first-info .input-layout .job-name input,
-  html .info-page .info-box .first-info .input-layout .start-date input,
-  html .info-page .info-box .first-info .input-layout .end-date input,
   html .info-page .info-box .first-info .experience .first-name input,
   html .info-page .info-box .first-info .experience .last-name input,
   html .info-page .info-box .first-info .experience .email input,
   html .info-page .info-box .first-info .experience .phone input,
   html .info-page .info-box .first-info .experience .linkedIn input,
   html .info-page .info-box .first-info .experience .job input,
-  html .info-page .info-box .first-info .experience .job-name input,
-  html .info-page .info-box .first-info .experience .start-date input,
-  html .info-page .info-box .first-info .experience .end-date input {
+  html .info-page .info-box .first-info .experience .job-name input {
     width: 20rem;
   }
 }
@@ -351,17 +369,13 @@ html .info-page .info-box .first-info .experience .end-date input {
   html .info-page .info-box .first-info .input-layout .linkedIn input,
   html .info-page .info-box .first-info .input-layout .job input,
   html .info-page .info-box .first-info .input-layout .job-name input,
-  html .info-page .info-box .first-info .input-layout .start-date input,
-  html .info-page .info-box .first-info .input-layout .end-date input,
   html .info-page .info-box .first-info .experience .first-name input,
   html .info-page .info-box .first-info .experience .last-name input,
   html .info-page .info-box .first-info .experience .email input,
   html .info-page .info-box .first-info .experience .phone input,
   html .info-page .info-box .first-info .experience .linkedIn input,
   html .info-page .info-box .first-info .experience .job input,
-  html .info-page .info-box .first-info .experience .job-name input,
-  html .info-page .info-box .first-info .experience .start-date input,
-  html .info-page .info-box .first-info .experience .end-date input {
+  html .info-page .info-box .first-info .experience .job-name input {
     width: 15rem;
   }
 }
@@ -372,17 +386,13 @@ html .info-page .info-box .first-info .input-layout .phone label,
 html .info-page .info-box .first-info .input-layout .linkedIn label,
 html .info-page .info-box .first-info .input-layout .job label,
 html .info-page .info-box .first-info .input-layout .job-name label,
-html .info-page .info-box .first-info .input-layout .start-date label,
-html .info-page .info-box .first-info .input-layout .end-date label,
 html .info-page .info-box .first-info .experience .first-name label,
 html .info-page .info-box .first-info .experience .last-name label,
 html .info-page .info-box .first-info .experience .email label,
 html .info-page .info-box .first-info .experience .phone label,
 html .info-page .info-box .first-info .experience .linkedIn label,
 html .info-page .info-box .first-info .experience .job label,
-html .info-page .info-box .first-info .experience .job-name label,
-html .info-page .info-box .first-info .experience .start-date label,
-html .info-page .info-box .first-info .experience .end-date label {
+html .info-page .info-box .first-info .experience .job-name label {
   font-size: 90%;
   position: absolute;
   right: 1.5rem;
@@ -401,17 +411,13 @@ html .info-page .info-box .first-info .input-layout .phone :is(input:focus, inpu
 html .info-page .info-box .first-info .input-layout .linkedIn :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .input-layout .job :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .input-layout .job-name :is(input:focus, input:valid) ~ label,
-html .info-page .info-box .first-info .input-layout .start-date :is(input:focus, input:valid) ~ label,
-html .info-page .info-box .first-info .input-layout .end-date :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .experience .first-name :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .experience .last-name :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .experience .email :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .experience .phone :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .experience .linkedIn :is(input:focus, input:valid) ~ label,
 html .info-page .info-box .first-info .experience .job :is(input:focus, input:valid) ~ label,
-html .info-page .info-box .first-info .experience .job-name :is(input:focus, input:valid) ~ label,
-html .info-page .info-box .first-info .experience .start-date :is(input:focus, input:valid) ~ label,
-html .info-page .info-box .first-info .experience .end-date :is(input:focus, input:valid) ~ label {
+html .info-page .info-box .first-info .experience .job-name :is(input:focus, input:valid) ~ label {
   transform: translateY(-50%) scale(0.9);
   margin: 0em;
   margin-left: 1.3em;
@@ -425,18 +431,121 @@ html .info-page .info-box .first-info .input-layout .phone :is(input:focus, inpu
 html .info-page .info-box .first-info .input-layout .linkedIn :is(input:focus, input:valid),
 html .info-page .info-box .first-info .input-layout .job :is(input:focus, input:valid),
 html .info-page .info-box .first-info .input-layout .job-name :is(input:focus, input:valid),
-html .info-page .info-box .first-info .input-layout .start-date :is(input:focus, input:valid),
-html .info-page .info-box .first-info .input-layout .end-date :is(input:focus, input:valid),
 html .info-page .info-box .first-info .experience .first-name :is(input:focus, input:valid),
 html .info-page .info-box .first-info .experience .last-name :is(input:focus, input:valid),
 html .info-page .info-box .first-info .experience .email :is(input:focus, input:valid),
 html .info-page .info-box .first-info .experience .phone :is(input:focus, input:valid),
 html .info-page .info-box .first-info .experience .linkedIn :is(input:focus, input:valid),
 html .info-page .info-box .first-info .experience .job :is(input:focus, input:valid),
-html .info-page .info-box .first-info .experience .job-name :is(input:focus, input:valid),
-html .info-page .info-box .first-info .experience .start-date :is(input:focus, input:valid),
-html .info-page .info-box .first-info .experience .end-date :is(input:focus, input:valid) {
+html .info-page .info-box .first-info .experience .job-name :is(input:focus, input:valid) {
   border-color: rgb(150, 150, 200);
+}
+html .info-page .info-box .first-info .input-layout .phone,
+html .info-page .info-box .first-info .experience .phone {
+  position: relative;
+  width: 20rem;
+}
+html .info-page .info-box .first-info .input-layout .phone .selected-option,
+html .info-page .info-box .first-info .experience .phone .selected-option {
+  border-radius: 0.5rem 20px 20px 0.5rem;
+  background-color: #cacaca;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html .info-page .info-box .first-info .input-layout .phone .selected-option .flag,
+html .info-page .info-box .first-info .experience .phone .selected-option .flag {
+  position: relative;
+  width: 7rem;
+  text-align: center;
+  cursor: pointer;
+}
+html .info-page .info-box .first-info .input-layout .phone input,
+html .info-page .info-box .first-info .experience .phone input {
+  width: 100%;
+  padding: 1rem 0.6rem;
+  font-size: 1.1rem;
+  background-color: #ffffff;
+  outline: none;
+  position: relative;
+  direction: ltr;
+}
+html .info-page .info-box .first-info .input-layout .phone label,
+html .info-page .info-box .first-info .experience .phone label {
+  top: 0rem;
+  position: absolute;
+}
+html .info-page .info-box .first-info .input-layout .phone .options,
+html .info-page .info-box .first-info .experience .phone .options {
+  position: absolute;
+  top: 4rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  z-index: 10;
+  display: none;
+}
+html .info-page .info-box .first-info .input-layout .phone .options::before,
+html .info-page .info-box .first-info .experience .phone .options::before {
+  position: absolute;
+  content: "";
+  left: 1rem;
+  top: -1.2rem;
+  width: 0;
+  height: 0;
+  border: 0.6rem solid transparent;
+}
+html .info-page .info-box .first-info .input-layout .phone .options input,
+html .info-page .info-box .first-info .experience .phone .options input {
+  background-color: #cacaca;
+  color: #fff;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.4rem 1rem;
+}
+html .info-page .info-box .first-info .input-layout .phone .active,
+html .info-page .info-box .first-info .experience .phone .active {
+  display: block;
+}
+html .info-page .info-box .first-info .input-layout .phone ol,
+html .info-page .info-box .first-info .experience .phone ol {
+  list-style: none;
+  max-height: 23rem;
+  overflow: overlay;
+}
+html .info-page .info-box .first-info .input-layout .phone ol::-webkit-scrollbar,
+html .info-page .info-box .first-info .experience .phone ol::-webkit-scrollbar {
+  width: 0.6rem;
+}
+html .info-page .info-box .first-info .input-layout .phone ol::-webkit-scrollbar-thumb,
+html .info-page .info-box .first-info .experience .phone ol::-webkit-scrollbar-thumb {
+  width: 0.4rem;
+  height: 3rem;
+  background-color: #ccc;
+  border-radius: 0.4rem;
+}
+html .info-page .info-box .first-info .input-layout .phone ol li,
+html .info-page .info-box .first-info .experience .phone ol li {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+html .info-page .info-box .first-info .input-layout .phone ol li:not(:last-child),
+html .info-page .info-box .first-info .experience .phone ol li:not(:last-child) {
+  border-bottom: 0.1rem solid #eee;
+}
+html .info-page .info-box .first-info .input-layout .phone ol li:hover,
+html .info-page .info-box .first-info .experience .phone ol li:hover {
+  background-color: lightcyan;
+}
+html .info-page .info-box .first-info .input-layout .phone ol li .country-name,
+html .info-page .info-box .first-info .experience .phone ol li .country-name {
+  margin-left: 0.4rem;
+}
+html .info-page .info-box .first-info .input-layout .phone ol .hide,
+html .info-page .info-box .first-info .experience .phone ol .hide {
+  display: none;
 }
 html .info-page .info-box .first-info .input-layout .linkedIn,
 html .info-page .info-box .first-info .experience .linkedIn {
@@ -569,18 +678,9 @@ html .info-page .info-box .first-info .experience .expe-details .addExp {
   flex-direction: column;
   justify-content: space-around;
 }
-html .info-page .info-box .first-info .input-layout .expe-details .addExp p,
-html .info-page .info-box .first-info .experience .expe-details .addExp p {
-  font-size: 1rem;
-  margin: 0.5rem;
-}
-html .info-page .info-box .first-info .input-layout .expe-details .addExp p a,
-html .info-page .info-box .first-info .experience .expe-details .addExp p a {
-  cursor: pointer;
-  color: #000000;
-}
 html .info-page .info-box .first-info .input-layout .expe-details .addExp button,
 html .info-page .info-box .first-info .experience .expe-details .addExp button {
+  margin: 1rem;
   width: 5rem;
   height: 2rem;
   font-size: 1.5rem;

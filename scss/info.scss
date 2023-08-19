@@ -9,7 +9,7 @@ html {
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
   background-position: top;
-  background-color: color.$lightGray;
+  background-color: color.$white;
 
   @include break.breakpoint(medium) {
     background-position: center;
@@ -283,7 +283,7 @@ html {
             width: 20rem;
             .selected-option {
               border-radius: 0.5rem 20px 20px 0.5rem;
-              background-color: color.$active;
+              background-color: color.$lightGray;
               overflow: hidden;
 
               display: flex;
@@ -291,7 +291,7 @@ html {
               align-items: center;
               .flag {
                 position: relative;
-
+                direction: ltr;
                 width: 7rem;
                 text-align: center;
                 cursor: pointer;

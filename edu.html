@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صمم سيرتك</title>
+    <link rel="stylesheet" href="./dist/edu.css" />
+  </head>
+  <body>
+    <div class="info-page">
+      <nav>
+        <svg
+          class="hambar"
+          fill="#000000"
+          width="800px"
+          height="800px"
+          viewBox="0 0 52 52"
+          data-name="Layer 1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M50,12.5H2a2,2,0,0,1,0-4H50a2,2,0,0,1,0,4Z" />
+          <path d="M50,28H2a2,2,0,0,1,0-4H50a2,2,0,0,1,0,4Z" />
+          <path d="M50,43.5H2a2,2,0,0,1,0-4H50a2,2,0,0,1,0,4Z" />
+        </svg>
+        <h1><a href="./index.html">سيرتكم</a></h1>
+        <div>
+          <a class="here" href="#">صمم سيرتك الآن</a>
+          <a href="#">من نحن </a>
+          <a href="#">تواصل معنا </a>
+        </div>
+      </nav>
+      <form action="" class="info-box">
+        <div class="mid-layer">
+          <div class="education-info">
+            <h1>التعليم</h1>
+            <div class="input-layout">
+              <div class="eduName">
+                <input
+                  type="text"
+                  name="place"
+                  required=""
+                  autocomplete="off"
+                />
+                <label for="name"> اسم الجهة </label>
+              </div>
+              <div class="eduName">
+                <input
+                  type="text"
+                  name="place"
+                  required=""
+                  autocomplete="off"
+                />
+                <label for="name"> اسم التخصص </label>
+              </div>
+              <div class="eductionName">
+                <fieldset>
+                  <legend>مستوى التعليم</legend>
+                  <select name="" class="edu-select">
+                    <option value="">ثانوي</option>
+                    <option value="">دبلوم</option>
+                    <option value="">بكالوريوس</option>
+                    <option value="">ماجستير</option>
+                    <option value="">دكتوراه</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="degree-div">
+                <div class="eduDegree">
+                  <input
+                    type="text"
+                    name="place"
+                    required=""
+                    autocomplete="off"
+                  />
+                  <label for="name"> ادخل المعدل </label>
+                </div>
+                <div class="eduDegree">
+                  <input
+                    type="text"
+                    name="place"
+                    required=""
+                    autocomplete="off"
+                  />
+                  <label for="name"> من أصل </label>
+                </div>
+              </div>
+              <div class="edu-date">
+                <fieldset>
+                  <legend>تاريخ التخرج</legend>
+                  <select name="year" id="edu-year" class="CDS">
+                    <option value="">اختر سنة</option>
+                  </select>
+                  <select name="month" id="month" class="CDS">
+                    <!-- Cerdtificate date select-->
+                    <option value="">اختر شهر</option>
+                    <option value="Jan">01</option>
+                    <option value="Feb">02</option>
+                    <option value="Mar">03</option>
+                    <option value="Apr">04</option>
+                    <option value="May">05</option>
+                    <option value="Jun">06</option>
+                    <option value="Jul">07</option>
+                    <option value="Aug">08</option>
+                    <option value="Sep">09</option>
+                    <option value="Oct">10</option>
+                    <option value="Nov">11</option>
+                    <option value="Dec">12</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="addCer">
+                <img src="/img/add.png" width="20px" alt="" />
+                اضافة تعليم آخر؟
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="certificate-info">
+            <h1>الشهادات</h1>
+            <div class="input-layout">
+              <div class="certificate">
+                <input
+                  type="text"
+                  name="place"
+                  required=""
+                  autocomplete="off"
+                />
+                <label for="name"> مسمى الشهادة </label>
+              </div>
+            </div>
+          </div>
+          <div class="lang-info">
+            <h1>اللغات</h1>
+            <div class="input-layout">
+              <div class="lang">
+                <input type="text" name="lang" required="" autocomplete="off" />
+                <label for="lang"> اللغة </label>
+              </div>
+              <div>
+                <fieldset>
+                  <legend>مستوى الإتقان</legend>
+                  <select name="" id="" class="levelName">
+                    <option value="">مبتدأ</option>
+                    <option value="">جيد</option>
+                    <option value="">جيد جدا</option>
+                    <option value="">ممتاز</option>
+                    <option value="">لغتي الأم</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="addLang">
+                <img src="/img/add.png" width="20px" alt="" />
+                اضافة لغة اخرى؟
+              </div>
+            </div>
+          </div>
+          <div class="skills-info">
+            <h1>المهارات</h1>
+            <div class="input-layout">
+              <div class="skills">
+                <input
+                  type="text"
+                  name="skill"
+                  required=""
+                  autocomplete="off"
+                />
+                <label for="skill"> المهارة </label>
+              </div>
+              <div class="addSkill">
+                <img src="/img/add.png" width="20px" alt="" />
+                اضافة مهارة اخرى؟
+              </div>
+            </div>
+          </div>
+          <button class="finishBtn" type="submit">أنشئ سيرتي الذاتية</button>
+        </div>
+        <img src="./img/undraw_Done_re_oak4.png" alt="" class="profile-pic" />
+      </form>
+    </div>
+  </body>
+</html>

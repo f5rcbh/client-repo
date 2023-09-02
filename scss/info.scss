@@ -4,54 +4,31 @@
 @use "./fonts/text" as text;
 @use "./responsive/layouts" as layout;
 
-html {
-  height: 100%;
+body {
   background: url(../img/downWave.svg) no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
   background-color: color.$white;
-
+  width: 100vw;
+  height: 100vh;
   @include break.breakpoint(medium) {
     background-position: center;
     height: auto;
   }
-
-  // info layer
-  // .alert {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   z-index: 2;
-  //   width: 30%;
-  //   height: 30%;
-  //   border-radius: 20px;
-  //   background-color: color.$active;
-  //   font-size: text.$largeSize;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   display: none;
-  // }
-  // .active {
-  //   display: flex;
-  // }
 
   // the main page
   .info-page {
     @include layout.flexCenter();
     flex-direction: column;
     align-items: stretch;
-    height: 100vh;
+    height: 100%;
+    justify-items: stretch;
     @include break.breakpoint(largePhone) {
       @include layout.gridCenter();
       grid-template-columns: 1fr;
     }
-
-    // navber
     nav {
       @include layout.flexCenter();
-      justify-content: stretch;
       margin: 1rem 5rem;
       @include break.breakpoint(largePhone) {
         width: 80%;
@@ -111,16 +88,22 @@ html {
         }
       }
     }
+
+    // navber
     //end of the nav bar
 
     // this is for the info box
     .info-box {
-      @include layout.gridCenter();
-      grid-template-columns: 1fr 1fr;
+      @include layout.flexCenter();
+      justify-content: space-around;
+      align-items: stretch;
       background-color: color.$white;
-      box-shadow: 10px -10px 5px #c1c1c1;
+      box-shadow: -10px 10px 5px #c1c1c1, 10px -10px 5px #c1c1c1;
       border-radius: 20px;
       margin: auto;
+      width: 60%;
+      aspect-ratio: 2/1;
+      overflow: visible;
       // responsive
       @include break.breakpoint(large) {
         width: 70rem;
@@ -144,11 +127,14 @@ html {
 
       //for the left side pic
       .profilePic {
-        width: 35rem;
+        // position: fixed;
+        border-radius: 20px;
+        object-fit: contain;
+        width: 40%;
         order: 2;
-        // display: none;
+
         @include break.breakpoint(large) {
-          width: 80%;
+          width: 50%;
         }
         @include break.breakpoint(medium) {
           width: 90%;
@@ -164,6 +150,7 @@ html {
         flex-direction: column;
         margin: 1rem;
         row-gap: 1rem;
+        width: auto;
         @include break.breakpoint(largePhone) {
           row-gap: 0;
         }
@@ -173,6 +160,7 @@ html {
         .input-layout,
         .experience {
           @include layout.gridCenter();
+          flex-wrap: wrap;
           gap: 1rem;
           h1 {
             margin-left: auto;
@@ -281,6 +269,32 @@ html {
           .phone {
             position: relative;
             width: 20rem;
+            .help-div {
+              position: absolute;
+              top: 1rem;
+              left: -2rem;
+              .help {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1.5rem;
+                cursor: pointer;
+              }
+              &:hover::after {
+                position: absolute;
+                top: -4.5rem;
+                left: -11rem;
+                content: "كتابة رقم الجوال تكون بهذا الشكل  96650xxxxxxx+";
+                text-align: center;
+                border-radius: 10px 10px 0 10px;
+                color: color.$white;
+                background-color: color.$black;
+                width: 11rem;
+                height: 4rem;
+                font-size: 14px;
+                padding: 10px;
+              }
+            }
             .selected-option {
               border-radius: 0.5rem 20px 20px 0.5rem;
               background-color: color.$lightGray;
@@ -517,272 +531,7 @@ html {
       //
       // next page layer
 
-      .mid-layer {
-        @include layout.flexCenter();
-        flex-direction: column;
-        padding: 1rem;
-        display: none;
-
-        // this is for adding experience
-
-        .certificate-info,
-        .lang-info,
-        .skills-info {
-          @include layout.flexCenter();
-          flex-direction: column;
-          flex-wrap: wrap;
-          h1 {
-            margin-left: auto;
-            @include break.breakpoint(smallPhone) {
-              font-size: text.$halfSmall;
-            }
-          }
-          .input-layout {
-            @include layout.gridCenter();
-            grid-template-columns: 1fr 1fr;
-            @include break.breakpoint(largePhone) {
-              @include layout.flexCenter();
-              flex-direction: column;
-            }
-            .placeName,
-            .certificateName,
-            .releaseDate,
-            .lang,
-            .levelName,
-            .skills {
-              font-family: "Segoe UI", sans-serif;
-              position: relative;
-              input {
-                font-size: 100%;
-                padding: 1em;
-                outline: none;
-                border: 2px solid rgb(200, 200, 200);
-                background-color: transparent;
-                border-radius: 20px;
-                width: 20rem;
-                @include break.breakpoint(medium) {
-                  width: 15rem;
-                }
-                @include break.breakpoint(small) {
-                  width: 10rem;
-                }
-                @include break.breakpoint(largePhone) {
-                  width: 15rem;
-                }
-                @include break.breakpoint(smallPhone) {
-                  width: 13rem;
-                }
-              }
-
-              label {
-                font-size: 100%;
-                position: absolute;
-                right: 1.5rem;
-                top: 1rem;
-                float: right;
-                padding: 0.8em;
-                margin-left: 0.5em;
-                pointer-events: none;
-                transition: all 0.3s ease;
-                color: rgb(100, 100, 100);
-                @include break.breakpoint(smallPhone) {
-                  font-size: 0.9rem;
-                }
-              }
-
-              :is(input:focus, input:valid) ~ label {
-                transform: translateY(-50%) scale(0.9);
-                margin: 0em;
-                margin-left: 1.3em;
-                padding: 0.4em;
-                background-color: color.$white;
-              }
-              :is(input:focus, input:valid) {
-                border-color: rgb(150, 150, 200);
-              }
-            }
-          }
-
-          .addCer {
-            @include layout.flexCenter();
-            p {
-              margin: 1rem;
-              font-size: text.$smallSize;
-              @include break.breakpoint(medium) {
-                font-size: 0.9rem;
-              }
-              a {
-                cursor: pointer;
-                color: color.$black;
-              }
-            }
-
-            button {
-              background-color: color.$active;
-              width: 8rem;
-              height: 2.5rem;
-              font-size: text.$midSize;
-              border-radius: 20px;
-              border: none;
-              cursor: pointer;
-              @include break.breakpoint(medium) {
-                width: 6rem;
-                font-size: text.$halfSmall;
-              }
-
-              @include break.breakpoint(small) {
-                width: 4rem;
-                font-size: text.$smallSize;
-              }
-            }
-          }
-        }
-        .lang-info {
-          @include layout.flexCenter();
-          flex-direction: column;
-          flex-wrap: wrap;
-          input {
-            margin: 1rem;
-            width: 20rem;
-            height: 3rem;
-            border-radius: 10px;
-            outline: none;
-            font-size: 1.2rem;
-            &::placeholder {
-              margin: 1rem;
-              padding: 1rem;
-            }
-            @include break.breakpoint(small) {
-              width: 15rem;
-            }
-          }
-          .addLang {
-            @include layout.flexCenter();
-            grid-column: 2;
-            flex-direction: row-reverse;
-            justify-content: flex-start;
-            p {
-              margin: 1rem;
-              font-size: text.$smallSize;
-              @include break.breakpoint(medium) {
-                font-size: 0.9rem;
-              }
-              a {
-                cursor: pointer;
-                color: color.$black;
-              }
-            }
-
-            button {
-              width: 8rem;
-              height: 2.5rem;
-              font-size: text.$midSize;
-              border-radius: 20px;
-              border: none;
-              background-color: color.$white;
-              cursor: pointer;
-              background-color: color.$active;
-              @include break.breakpoint(medium) {
-                width: 6rem;
-                font-size: text.$halfSmall;
-              }
-              @include break.breakpoint(small) {
-                width: 4rem;
-                font-size: text.$smallSize;
-              }
-            }
-          }
-        }
-        .skills-info {
-          @include layout.flexCenter();
-          flex-direction: column;
-          flex-wrap: wrap;
-          .addSkill {
-            @include layout.flexCenter();
-            flex-direction: row-reverse;
-            p {
-              margin: 1rem;
-              font-size: text.$smallSize;
-              @include break.breakpoint(medium) {
-                font-size: 0.9rem;
-              }
-              a {
-                cursor: pointer;
-                color: color.$black;
-              }
-            }
-
-            button {
-              width: 8rem;
-              height: 2.5rem;
-              font-size: text.$midSize;
-              border-radius: 20px;
-              border: none;
-              cursor: pointer;
-              background-color: color.$active;
-              @include break.breakpoint(medium) {
-                width: 6rem;
-                font-size: text.$halfSmall;
-              }
-              @include break.breakpoint(small) {
-                width: 4rem;
-                font-size: text.$smallSize;
-              }
-            }
-          }
-        }
-
-        img {
-          border-radius: 5rem;
-          margin: 1rem;
-        }
-        input {
-          margin: 1rem;
-          width: 20rem;
-          height: 3rem;
-          border-radius: 10px;
-          outline: none;
-          font-size: 1.2rem;
-          &::placeholder {
-            margin: 1rem;
-            padding: 1rem;
-          }
-        }
-      }
-
-      .infoPic {
-        border-radius: 30%;
-        @include break.breakpoint(large) {
-          width: 20rem;
-        }
-        @include break.breakpoint(small) {
-          width: 13rem;
-        }
-        display: none;
-      }
-      // for js
-      .active {
-        display: flex;
-      }
-      //
-      .finishBtn {
-        cursor: pointer;
-        // transform: translateY(-15rem);
-        border: none;
-        color: color.$white;
-        font-size: text.$midSize;
-        background-color: color.$blobPurp;
-        width: 25rem;
-        height: 5rem;
-        border-radius: 5rem;
-        margin: 2rem auto;
-        @include break.breakpoint(small) {
-          width: 15rem;
-          font-size: text.$halfSmall;
-        }
-      }
+      // for JS stuff
     }
   }
-
-  // for JS stuff
 }

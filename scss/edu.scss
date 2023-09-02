@@ -1,0 +1,309 @@
+@forward "global";
+@use "./responsive/breakpoint" as break;
+@use "./fonts/colors" as color;
+@use "./fonts/text" as text;
+@use "./responsive/layouts" as layout;
+
+body {
+  display: grid;
+  background: url("/img/upWave.svg") no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-color: color.$white;
+  height: 100vw;
+  height: 100vh;
+  .info-page {
+    @include layout.flexCenter();
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    justify-items: stretch;
+    nav {
+      @include layout.flexCenter();
+      margin: 1rem 5rem;
+      @include break.breakpoint(largePhone) {
+        width: 80%;
+      }
+      .hambar {
+        display: none;
+        @include break.breakpoint(largePhone) {
+          display: block;
+
+          width: 50px;
+          height: auto;
+          z-index: 3;
+        }
+      }
+      h1 {
+        font-size: text.$XLargeSize;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+        @include break.breakpoint(small) {
+          font-size: text.$largeSize;
+        }
+        @include break.breakpoint(largePhone) {
+          font-size: text.$midSize;
+          margin-right: auto;
+        }
+      }
+      div {
+        @include layout.flexCenter();
+        justify-content: space-evenly;
+        font-size: text.$midSize;
+
+        margin: auto;
+        width: 100%;
+        @include break.breakpoint(largePhone) {
+          display: none;
+          justify-content: flex-start;
+          position: fixed;
+          flex-direction: column;
+          inset: 0;
+          right: -25rem;
+          z-index: 2;
+          background-color: color.$white;
+        }
+        @include break.breakpoint(small) {
+          font-size: text.$halfSmall;
+        }
+
+        a {
+          @include break.breakpoint(largePhone) {
+            padding: 5rem 0;
+          }
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+    .info-box {
+      @include layout.flexCenter();
+      justify-content: space-around;
+      background-color: color.$white;
+      box-shadow: -10px 10px 10px #cfcfcf;
+      border-radius: 20px;
+      margin: auto;
+      width: 60%;
+      aspect-ratio: 2/1;
+      overflow: visible;
+      padding: 1rem;
+      // responsive
+      @include break.breakpoint(large) {
+        width: 70rem;
+      }
+      @include break.breakpoint(medium) {
+        width: 60rem;
+      }
+      @include break.breakpoint(small) {
+        width: 40rem;
+      }
+      @include break.breakpoint(largePhone) {
+        margin: 2rem auto;
+        grid-template-columns: 1fr;
+        width: 25rem;
+      }
+      @include break.breakpoint(mediumPhone) {
+        @include layout.flexCenter();
+        flex-direction: column;
+        width: 20rem;
+      }
+      .profile-pic {
+        width: 30%;
+        object-fit: contain;
+      }
+      .mid-layer {
+        @include layout.flexCenter();
+        align-items: stretch;
+        flex-direction: column;
+
+        // this is for adding experience
+
+        .certificate-info,
+        .lang-info,
+        .skills-info,
+        .education-info {
+          h1 {
+            @include break.breakpoint(smallPhone) {
+              font-size: text.$halfSmall;
+            }
+          }
+          .input-layout {
+            @include layout.gridCenter();
+            grid-template-columns: repeat(2, auto);
+            justify-content: center;
+            justify-items: stretch;
+            align-items: baseline;
+            width: 100%;
+            @include break.breakpoint(largePhone) {
+              @include layout.flexCenter();
+              flex-direction: column;
+            }
+            .placeName,
+            .certificateName,
+            .certificate,
+            .releaseDate,
+            .lang,
+            .levelName,
+            .skills,
+            .edu-date,
+            .eduName,
+            .eduDegree {
+              font-family: "Segoe UI", sans-serif;
+              position: relative;
+              // for input styles
+              input {
+                font-size: 100%;
+                padding: 1em;
+                outline: none;
+                border: 2px solid rgb(200, 200, 200);
+                background-color: transparent;
+                border-radius: 20px;
+                width: 20rem;
+                @include break.breakpoint(medium) {
+                  width: 15rem;
+                }
+                @include break.breakpoint(small) {
+                  width: 10rem;
+                }
+                @include break.breakpoint(largePhone) {
+                  width: 15rem;
+                }
+                @include break.breakpoint(smallPhone) {
+                  width: 13rem;
+                }
+              }
+
+              label {
+                font-size: 100%;
+                position: absolute;
+                right: 1.5rem;
+                top: 1rem;
+                float: right;
+                padding: 0.8em;
+                margin-left: 0.5em;
+                pointer-events: none;
+                transition: all 0.3s ease;
+                color: rgb(100, 100, 100);
+                @include break.breakpoint(smallPhone) {
+                  font-size: 0.9rem;
+                }
+              }
+
+              :is(input:focus, input:valid) ~ label {
+                transform: translateY(-50%) scale(0.9);
+                margin: 0em;
+                margin-left: 1.3em;
+                padding: 0.4em;
+                background-color: color.$white;
+              }
+              :is(input:focus, input:valid) {
+                border-color: rgb(150, 150, 200);
+              }
+            }
+            .degree-div {
+              display: flex;
+              input {
+                width: 9rem;
+              }
+            }
+            fieldset {
+              padding: 0.5rem 0;
+              border: none;
+              @include layout.flexCenter();
+              legend {
+                font-size: text.$halfSmall;
+              }
+              .edu-select,
+              .levelName {
+                width: 20rem;
+                height: 3rem;
+                font-size: 1.25rem;
+              }
+              .CDS {
+                //Cerdtificate date select
+                width: 9.5rem;
+                height: 3rem;
+                font-size: 1.25rem;
+                margin: 0 0.5rem;
+              }
+            }
+            select {
+              width: 8rem;
+              height: 2rem;
+              border-radius: 10px;
+              padding: 0.5rem;
+              outline: none;
+              option {
+                font-size: text.$smallSize;
+                border-radius: 10px;
+                border: none;
+              }
+            }
+          }
+
+          .addCer,
+          .addLang,
+          .addSkill {
+            @include layout.flexCenter();
+            img {
+              cursor: pointer;
+            }
+          }
+        }
+
+        img {
+          border-radius: 5rem;
+          margin: 1rem;
+        }
+        input {
+          margin: 1rem;
+          width: 20rem;
+          height: 3rem;
+          border-radius: 10px;
+          outline: none;
+          font-size: 1.2rem;
+          &::placeholder {
+            margin: 1rem;
+            padding: 1rem;
+          }
+        }
+      }
+
+      .infoPic {
+        border-radius: 30%;
+        @include break.breakpoint(large) {
+          width: 20rem;
+        }
+        @include break.breakpoint(small) {
+          width: 13rem;
+        }
+        // display: none;
+      }
+      // for js
+      .active {
+        display: flex;
+      }
+      //
+      .finishBtn {
+        cursor: pointer;
+        // transform: translateY(-15rem);
+        border: none;
+        color: color.$white;
+        font-size: text.$midSize;
+        background-color: color.$blobPurp;
+        width: 25rem;
+        height: 5rem;
+        border-radius: 5rem;
+        margin: 1rem auto;
+        grid-column: 1/4;
+        @include break.breakpoint(small) {
+          width: 15rem;
+          font-size: text.$halfSmall;
+        }
+      }
+    }
+  }
+}
